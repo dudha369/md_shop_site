@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: var(--tg-theme-text-color);
+    user-select: none !important;
+}
+
+body {
+    background-color: var(--tg-theme-bg-color);
+}
+
+.container {
+    max-width: 100%;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#inner_fortnite {
+    grid-template-rows: 300px 300px;
+}
+
+#inner_discord {
+    grid-template-rows: 275px 275px;
+}
+
+.category {
+    padding: 5px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center; 
+    text-decoration: underline;
+}
+
+.name {
+    padding: 1px;
+    font-size: 16px;
+}
+
+.item {
+    text-align: center;
+}
+
+.img {
+    border: none;
+    border-radius: 12px;
+}
+
+@keyframes buttonAnimation {
+    0% { width: 1px; }
+    100% { width: 37.5px; }
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 130px;
+    margin: auto;
+}
+
+.btn {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    height: 35px;
+    width: 130px;
+    position: relative;
+}
+
+.btn.plus, .btn.minus {
+    display: none;
+    height: 35px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    color: var(--tg-theme-button-text-color);
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+
+.btn.minus {
+    margin-right: auto;
+}
+
+.btn.plus {
+    margin-left: auto;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 1px var(--tg-theme-accent-text-color);
+}
+
+.btn.active {
+    transition: all .8s;
+    content: "";
+    width: 50px;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.btn.minus.active {
+    display: block;
+    animation: buttonAnimation .8s forwards;
+    transition: all .8s;
+    width: 35px;
+    background-color: red;
+}
+
+.btn.plus.active {
+    display: block;
+    animation: buttonAnimation .8s forwards;
+    transition: all .8s;
+    width: 35px;
+    background-color: lime;
+}
+
+.copyright {
+    color: var(--tg-theme-link-color);
+    display: block;
+    font-size: 15px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.copyright img {
+    border-radius: 50%;
+    vertical-align: middle;
+    padding: 2px;
+}
