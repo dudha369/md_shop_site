@@ -32,6 +32,11 @@ function buy(item){
     const btnMinus = document.getElementById(item + "-minus");
     const btnPlus = document.getElementById(item + "-plus");
     
+    if(btn.classList.contains("disactive")) {
+        btn.classList.remove("disactive");
+        btnMinus.classList.remove("disactive");
+        btnPlus.classList.remove("disactive");
+    }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
     btn.style.cursor = "default";
@@ -61,11 +66,11 @@ function plus(item){
 }
 
 function minus(item){
-    if(items.get(item)<=0) return;
-    items.set(item, items.get(item)-1);
+    if(items.get(item)<=0) {items.set(item, 0);}
+    else {items.set(item, items.get(item)-1);}
 
-    try{window.navigator.vibrate(25);}
-    catch{}
+    try {window.navigator.vibrate(25);}
+    catch {}
 
     const countOfItems = Array.from(items.values()).reduce(function(sum, elem) {
         return sum + elem;
@@ -84,10 +89,13 @@ function minus(item){
         btn.innerHTML = "Придбати";
         
         btn.classList.remove("active");
+        btn.classList.add("disactive")
         btnMinus.style.display = "none";
         btnMinus.classList.remove("active");
+        btnMinus.classList.add("disactive")
         btnPlus.style.display = "none";
         btnPlus.classList.remove("active");
+        btnPlus.classList.add("disactive")
         if(Array.from(items.values()).every(value => value === 0)){
             tg.MainButton.hide();
         }
