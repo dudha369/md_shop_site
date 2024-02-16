@@ -50,9 +50,14 @@ body {
     border-radius: 12px;
 }
 
-@keyframes buttonAnimation {
+@keyframes expand {
     0% { width: 1px; }
     100% { width: 37.5px; }
+}
+
+@keyframes narrow {
+    0% { width: 37.5px; }
+    100% { width: 1px; }
 }
 
 .buttons {
@@ -111,7 +116,7 @@ body {
 
 .btn.minus.active {
     display: block;
-    animation: buttonAnimation .8s forwards;
+    animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
     background-color: red;
@@ -119,10 +124,29 @@ body {
 
 .btn.plus.active {
     display: block;
-    animation: buttonAnimation .8s forwards;
+    animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
     background-color: lime;
+}
+
+.btn.disactive {
+    transition: all .8s;
+    content: "";
+    width: 130px;
+    background-color: var(--tg-theme-button-color);
+}
+
+.btn.minus.disactive {
+    animation: narrow .8s forwards;
+    transition: all .8s;
+    width: 1px;
+}
+
+.btn.plus.disactive {
+    animation: narrow .8s forwards;
+    transition: all .8s;
+    width: 1px;
 }
 
 .copyright {
