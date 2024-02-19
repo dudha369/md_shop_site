@@ -115,24 +115,23 @@ function minus(item) {
         btn.style.cursor = "pointer";
         btn.innerHTML = "Придбати";
         
+        btnMinus.addAttribute("disabled");
+        btnPlus.addAttribute("disabled");
+
         btn.classList.remove("active");
         btn.classList.add("disactive");
         btnMinus.classList.remove("active");
         btnMinus.classList.add("disactive");
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive");
-
-        btnMinus.addAttribute("disabled");
-        btnPlus.addAttribute("disabled");
         
         setTimeout(function(){ 
             btnMinus.style.display = "none";
             btnPlus.style.display = "none";
+            btn.removeAttribute("disabled");
+            btnMinus.removeAttribute("disabled");
+            btnPlus.removeAttribute("disabled");
         }, 750);
-        
-        btn.removeAttribute("disabled");
-        btnMinus.removeAttribute("disabled");
-        btnPlus.removeAttribute("disabled");
 
         if (Array.from(items.values())
             .every(value => value === 0)) {
