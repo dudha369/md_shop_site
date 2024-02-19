@@ -109,10 +109,12 @@ body {
 
 .btn-minus {
     margin-right: auto;
+    background-color: red;
 }
 
 .btn-plus {
     margin-left: auto;
+    background-color: lime;
 }
 
 .btn.active {
@@ -132,7 +134,6 @@ body {
     animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
-    background-color: red;
 }
 
 .btn-plus.active {
@@ -140,7 +141,6 @@ body {
     animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
-    background-color: lime;
 }
 
 .btn.disactive {
@@ -156,13 +156,13 @@ body {
 }
 
 .btn-minus.disactive {
-    animation: narrow .8s forwards;
+    /* animation: narrow .8s forwards; */
     transition: all .8s;
     width: 1px;
 }
 
 .btn-plus.disactive {
-    animation: narrow .8s forwards;
+    /* animation: narrow .8s forwards; */
     transition: all .8s;
     width: 1px;
 }
