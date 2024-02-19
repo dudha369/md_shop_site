@@ -60,11 +60,12 @@ body {
     height: 25px;
     border: none;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
 }
 
 .price {
+    padding: 5px;
     color: var(--tg-theme-text-color);
     text-decoration: underline;
     font-size: 14px;
@@ -94,7 +95,7 @@ body {
     position: relative;
 }
 
-.btn.plus, .btn.minus {
+.btn-plus, .btn-minus {
     display: none;
     height: 35px;
     cursor: pointer;
@@ -106,11 +107,11 @@ body {
     position: relative;
 }
 
-.btn.minus {
+.btn-minus {
     margin-right: auto;
 }
 
-.btn.plus {
+.btn-plus {
     margin-left: auto;
 }
 
@@ -126,7 +127,7 @@ body {
     100% { width: 35px; }
 }
 
-.btn.minus.active {
+.btn-minus.active {
     display: block;
     animation: expand .8s forwards;
     transition: all .8s;
@@ -134,7 +135,7 @@ body {
     background-color: red;
 }
 
-.btn.plus.active {
+.btn-plus.active {
     display: block;
     animation: expand .8s forwards;
     transition: all .8s;
@@ -154,13 +155,13 @@ body {
     100% { width: 1px; }
 }
 
-.btn.minus.disactive {
+.btn-minus.disactive {
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
 }
 
-.btn.plus.disactive {
+.btn-plus.disactive {
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
