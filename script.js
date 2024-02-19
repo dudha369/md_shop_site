@@ -103,11 +103,17 @@ function minus(item) {
         btn.innerHTML = "Придбати";
         
         btn.classList.remove("active");
-        btn.classList.add("disactive")
+        btn.classList.add("disactive");
         btnMinus.classList.remove("active");
         btnMinus.classList.add("disactive");
         btnPlus.classList.remove("active");
-        btnPlus.classList.add("disactive")
+        btnPlus.classList.add("disactive");
+        
+        setTimeout(function(){ 
+            btnMinus.style.display = "none";
+            btnPlus.style.display = "none";
+        }, 800);
+
         if (Array.from(items.values())
             .every(value => value === 0)) {
             tg.MainButton.hide();
