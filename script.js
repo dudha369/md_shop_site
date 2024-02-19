@@ -1,38 +1,45 @@
 const tg = window.Telegram.WebApp;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     tg.expand();
     tg.ready();
 });
 
 let items = new Map();
-Telegram.WebApp.onEvent("mainButtonClicked", function() {
+Telegram.WebApp.onEvent("mainButtonClicked", function () {
     let res = new Array();
     for (const [key, value] of items) {
-        if(value===0) {continue;}
+        if (value === 0) {
+            continue;
+        }
         res.push(`${key} x ${value}`);
     }
-    tg.sendData(res.sort().join(";"));
+    tg.sendData(res.sort()
+        .join(";"));
     tg.close();
 });
 
-function buy(item){
+function buy(item) {
     items.set(item, 1);
     
-    try{window.navigator.vibrate(25);}
-    catch{}
-
-    const countOfItems = Array.from(items.values()).reduce(function(sum, elem) {
-        return sum + elem;
-    }, 0);
+    try {
+        window.navigator.vibrate(25);
+    } catch {}
+    
+    const countOfItems = Array.from(items.values())
+        .reduce(function (sum, elem) {
+            return sum + elem;
+        }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-    if(!tg.MainButton.isVisible) {tg.MainButton.show();}
-
+    if (!tg.MainButton.isVisible) {
+        tg.MainButton.show();
+    }
+    
     const btn = document.getElementById(item);
     const btnMinus = document.getElementById(item + "-minus");
     const btnPlus = document.getElementById(item + "-plus");
     
-    if(btn.classList.contains("disactive")) {
+    if (btn.classList.contains("disactive")) {
         btn.classList.remove("disactive");
         btnMinus.classList.remove("disactive");
         btnPlus.classList.remove("disactive");
@@ -41,62 +48,68 @@ function buy(item){
     btn.setAttribute("disabled", "true");
     btn.style.cursor = "default";
     btn.innerHTML = 1;
-
+    
     btnMinus.style.display = "block";
     btnMinus.classList.add("active");
-    btnPlus.style.display = "block"; 
+    btnPlus.style.display = "block";
     btnPlus.classList.add("active");
-
+    
 }
 
-function plus(item){
-    items.set(item, items.get(item)+1);
-
-    try{window.navigator.vibrate(25);}
-    catch{}
-
-    const countOfItems = Array.from(items.values()).reduce(function(sum, elem) {
-        return sum + elem;
-    }, 0);
+function plus(item) {
+    items.set(item, items.get(item) + 1);
+    
+    try {
+        window.navigator.vibrate(25);
+    } catch {}
+    
+    const countOfItems = Array.from(items.values())
+        .reduce(function (sum, elem) {
+            return sum + elem;
+        }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-
+    
     const btn = document.getElementById(item);
-
+    
     btn.innerHTML = items.get(item);
 }
 
-function minus(item){
-    if(items.get(item)<=0) {items.set(item, 0);}
-    else {items.set(item, items.get(item)-1);}
-
-    try {window.navigator.vibrate(25);}
-    catch {}
-
-    const countOfItems = Array.from(items.values()).reduce(function(sum, elem) {
-        return sum + elem;
-    }, 0);
+function minus(item) {
+    if (items.get(item) <= 0) {
+        items.set(item, 0);
+    } else {
+        items.set(item, items.get(item) - 1);
+    }
+    
+    try {
+        window.navigator.vibrate(25);
+    } catch {}
+    
+    const countOfItems = Array.from(items.values())
+        .reduce(function (sum, elem) {
+            return sum + elem;
+        }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-
+    
     const btn = document.getElementById(item);
     const btnMinus = document.getElementById(item + "-minus");
     const btnPlus = document.getElementById(item + "-plus");
-
+    
     btn.innerHTML = items.get(item);
-
-    if(items.get(item)===0) {
+    
+    if (items.get(item) === 0) {
         btn.removeAttribute("disabled");
         btn.style.cursor = "pointer";
         btn.innerHTML = "Придбати";
         
         btn.classList.remove("active");
         btn.classList.add("disactive")
-        btnMinus.style.display = "none";
         btnMinus.classList.remove("active");
-        btnMinus.classList.add("disactive")
-        btnPlus.style.display = "none";
+        btnMinus.classList.add("disactive");
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive")
-        if(Array.from(items.values()).every(value => value === 0)){
+        if (Array.from(items.values())
+            .every(value => value === 0)) {
             tg.MainButton.hide();
         }
     }
