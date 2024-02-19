@@ -124,21 +124,14 @@ body {
     background-color: rgba(0, 0, 0, .1);
 }
 
-@keyframes expand {
-    0% { width: 1px; }
-    100% { width: 35px; }
-}
-
 .btn-minus.active {
     display: block;
-    animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
 }
 
 .btn-plus.active {
     display: block;
-    animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
 }
@@ -150,19 +143,14 @@ body {
     background-color: var(--tg-theme-button-color);
 }
 
-@keyframes narrow {
-    0% { width: 35px; }
-    100% { width: 1px; }
-}
-
 .btn-minus.disactive {
-    /* animation: narrow .8s forwards; */
+    background-color: red;
     transition: all .8s;
     width: 1px;
 }
 
 .btn-plus.disactive {
-    /* animation: narrow .8s forwards; */
+    background-color: lime;
     transition: all .8s;
     width: 1px;
 }
