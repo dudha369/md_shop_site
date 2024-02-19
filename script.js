@@ -5,6 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
     tg.ready();
 });
 
+window.onload = function() {
+    let color = getComputedStyle(document.documentElement)
+                .getPropertyValue('--tg-theme-button-color');
+    color = color.trim();
+    color = color.substring(1);
+  
+    let r = parseInt(color.substring(0, 2), 16);
+    let g = parseInt(color.substring(2, 4), 16);
+    let b = parseInt(color.substring(4, 6), 16);
+  
+    document.documentElement.style
+      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.1)');
+  };
+
 let items = new Map();
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     let res = new Array();
@@ -98,7 +112,6 @@ function minus(item) {
     btn.innerHTML = items.get(item);
     
     if (items.get(item) === 0) {
-        btn.removeAttribute("disabled");
         btn.style.cursor = "pointer";
         btn.innerHTML = "Придбати";
         
@@ -108,11 +121,18 @@ function minus(item) {
         btnMinus.classList.add("disactive");
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive");
+
+        btnMinus.addAttribute("disabled");
+        btnPlus.addAttribute("disabled");
         
         setTimeout(function(){ 
             btnMinus.style.display = "none";
             btnPlus.style.display = "none";
-        }, 800);
+        }, 750);
+        
+        btn.removeAttribute("disabled");
+        btnMinus.removeAttribute("disabled");
+        btnPlus.removeAttribute("disabled");
 
         if (Array.from(items.values())
             .every(value => value === 0)) {
