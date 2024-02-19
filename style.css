@@ -158,14 +158,12 @@ body {
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
-    display: none;
 }
 
 .btn.plus.disactive {
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
-    display: none;
 }
 
 .copyright {
