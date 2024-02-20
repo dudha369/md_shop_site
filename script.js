@@ -88,6 +88,18 @@ function plus(item) {
     btn.innerHTML = items.get(item);
 }
 
+function returnButtons() {
+    const btn = document.getElementById(item);
+    const btnMinus = document.getElementById(item + "-minus");
+    const btnPlus = document.getElementById(item + "-plus");
+
+    btnPlus.style.display = "none";
+    btnMinus.style.display = "none";
+    btn.removeAttribute("disabled");
+    btnMinus.removeAttribute("disabled");
+    btnPlus.removeAttribute("disabled");
+}
+
 function minus(item) {
     if (items.get(item) <= 0) {
         items.set(item, 0);
@@ -125,13 +137,7 @@ function minus(item) {
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive");
         
-        setTimeout(function(){ 
-            btnMinus.style.display = "none";
-            btnPlus.style.display = "none";
-            btn.removeAttribute("disabled");
-            btnMinus.removeAttribute("disabled");
-            btnPlus.removeAttribute("disabled");
-        }, 750);
+        setTimeout(returnButtons, 750);
 
         if (Array.from(items.values())
             .every(value => value === 0)) {
