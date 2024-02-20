@@ -130,13 +130,13 @@ function minus(item) {
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive");
         
-        sleep(750);
-
-        btnPlus.style.display = "none";
-        btnMinus.style.display = "none";
-        btn.removeAttribute("disabled");
-        btnMinus.removeAttribute("disabled");
-        btnPlus.removeAttribute("disabled");
+        setTimeout(function(){
+            btn.removeAttribute("disabled");
+            btnMinus.removeAttribute("disabled");
+            btnPlus.removeAttribute("disabled");
+            btnPlus.style.display = "none";
+            btnMinus.style.display = "none";
+        }, 750);
 
         if (Array.from(items.values())
             .every(value => value === 0)) {
