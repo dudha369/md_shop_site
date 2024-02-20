@@ -16,10 +16,11 @@ window.onload = function() {
     let b = parseInt(color.substring(4, 6), 16);
   
     document.documentElement.style
-      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.1)');
+      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.25)');
   };
 
 let items = new Map();
+
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     let res = new Array();
     for (const [key, value] of items) {
@@ -63,14 +64,13 @@ function buy(item) {
     btn.style.cursor = "default";
     btn.innerHTML = 1;
 
-    btnMinus.innerHTML = "-";
-    btnPlus.innerHTML = "+";
-    
     btnMinus.style.display = "block";
     btnMinus.classList.add("active");
     btnPlus.style.display = "block";
     btnPlus.classList.add("active");
     
+    btnMinus.innerHTML = "-";
+    btnPlus.innerHTML = "+";
 }
 
 function plus(item) {
@@ -89,11 +89,6 @@ function plus(item) {
     const btn = document.getElementById(item);
     
     btn.innerHTML = items.get(item);
-}
-
-function sleep(ms) {
-    ms += new Date().getTime();
-    while (new Date() < ms){}
 }
 
 function minus(item) {
