@@ -62,6 +62,9 @@ function buy(item) {
     btn.setAttribute("disabled", "true");
     btn.style.cursor = "default";
     btn.innerHTML = 1;
+
+    btnMinus.innerHTML = "-";
+    btnPlus.innerHTML = "+";
     
     btnMinus.style.display = "block";
     btnMinus.classList.add("active");
@@ -122,6 +125,9 @@ function minus(item) {
         
         btnMinus.setAttribute("disabled", "true");
         btnPlus.setAttribute("disabled", "true");
+
+        btnMinus.innerHTML = "";
+        btnPlus.innerHTML = "";
 
         btn.classList.remove("active");
         btn.classList.add("disactive");
