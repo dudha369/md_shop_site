@@ -120,8 +120,8 @@ function minus(item) {
         btn.style.cursor = "pointer";
         btn.innerHTML = "Придбати";
         
-        btnMinus.addAttribute("disabled");
-        btnPlus.addAttribute("disabled");
+        btnMinus.setAttribute("disabled", "true");
+        btnPlus.setAttribute("disabled", "true");
 
         btn.classList.remove("active");
         btn.classList.add("disactive");
@@ -130,7 +130,7 @@ function minus(item) {
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive");
         
-        sleep(800);
+        sleep(750);
 
         btnPlus.style.display = "none";
         btnMinus.style.display = "none";
