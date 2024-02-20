@@ -28,12 +28,12 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
-#inner_fortnite {
-    grid-template-rows: 300px 300px;
+#inner_fortnite, #inner_discord {
+    grid-template-rows: 285px 285px;
 }
 
-#inner_discord {
-    grid-template-rows: 275px 275px;
+#inner_telegram {
+    grid-template-rows: 235px;
 }
 
 .item {
@@ -131,7 +131,6 @@ body {
 
 .btn-minus.active {
     content: "";
-    /* background-color: red; */
     display: block;
     animation: expand .8s forwards;
     transition: all .8s;
@@ -140,7 +139,6 @@ body {
 
 .btn-plus.active {
     content: "";
-    /* background-color: lime; */
     display: block;
     animation: expand .8s forwards;
     transition: all .8s;
@@ -161,7 +159,6 @@ body {
 
 .btn-minus.disactive {
     content: "";
-    /* background-color: red; */
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
@@ -169,7 +166,6 @@ body {
 
 .btn-plus.disactive {
     content: "";
-    /* background-color: lime; */
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
