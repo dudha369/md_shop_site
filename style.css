@@ -55,17 +55,17 @@ body {
     position: absolute;
     bottom: 5px;
     color: var(--tg-theme-text-color);
-    -webkit-text-stroke: .5px var(--tg-theme-bg-color);
+    -webkit-text-stroke: .6px var(--tg-theme-bg-color);
     width: 100%;
     height: 25px;
     border: none;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
 }
 
 .price {
-    padding: 5px;
+    padding: 4px;
     color: var(--tg-theme-text-color);
     text-decoration: underline;
     font-size: 14px;
@@ -121,7 +121,7 @@ body {
     transition: all .8s;
     content: "";
     width: 50px;
-    background-color: rgba(0, 0, 0, .1);
+    background-color: var(--tg-theme-button-color-alpha);
 }
 
 @keyframes expand {
@@ -130,7 +130,8 @@ body {
 }
 
 .btn-minus.active {
-    background-color: red;
+    content: "";
+    /* background-color: red; */
     display: block;
     animation: expand .8s forwards;
     transition: all .8s;
@@ -138,7 +139,8 @@ body {
 }
 
 .btn-plus.active {
-    background-color: lime;
+    content: "";
+    /* background-color: lime; */
     display: block;
     animation: expand .8s forwards;
     transition: all .8s;
@@ -158,14 +160,16 @@ body {
 }
 
 .btn-minus.disactive {
-    background-color: red;
+    content: "";
+    /* background-color: red; */
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
 }
 
 .btn-plus.disactive {
-    background-color: lime;
+    content: "";
+    /* background-color: lime; */
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
