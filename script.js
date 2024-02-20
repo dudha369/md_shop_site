@@ -16,7 +16,7 @@ window.onload = function() {
     let b = parseInt(color.substring(4, 6), 16);
   
     document.documentElement.style
-      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.25)');
+      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.2)');
   };
 
 let items = new Map();
