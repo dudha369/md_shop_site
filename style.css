@@ -109,31 +109,38 @@ body {
 
 .btn-minus {
     margin-right: auto;
-    background-color: red;
 }
 
 .btn-plus {
     margin-left: auto;
-    background-color: lime;
 }
 
 .btn.active {
     transition: all .8s;
     content: "";
     width: 50px;
-    background-color: var(--tg-theme-button-color-alpha);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+@keyframes expand {
+    0% { width: 1px; }
+    100% { width: 35px; }
 }
 
 .btn-minus.active {
     display: block;
+    animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
+    background-color: red;
 }
 
 .btn-plus.active {
     display: block;
+    animation: expand .8s forwards;
     transition: all .8s;
     width: 35px;
+    background-color: lime;
 }
 
 .btn.disactive {
@@ -143,16 +150,21 @@ body {
     background-color: var(--tg-theme-button-color);
 }
 
+@keyframes narrow {
+    0% { width: 35px; }
+    100% { width: 1px; }
+}
+
 .btn-minus.disactive {
+    animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
-    background-color: red;
 }
 
 .btn-plus.disactive {
+    animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
-    background-color: lime;
 }
 
 .copyright {
