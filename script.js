@@ -88,16 +88,9 @@ function plus(item) {
     btn.innerHTML = items.get(item);
 }
 
-function returnButtons() {
-    const btn = document.getElementById(item);
-    const btnMinus = document.getElementById(item + "-minus");
-    const btnPlus = document.getElementById(item + "-plus");
-
-    btnPlus.style.display = "none";
-    btnMinus.style.display = "none";
-    btn.removeAttribute("disabled");
-    btnMinus.removeAttribute("disabled");
-    btnPlus.removeAttribute("disabled");
+function sleep(ms) {
+    ms += new Date().getTime();
+    while (new Date() < ms){}
 }
 
 function minus(item) {
@@ -137,7 +130,13 @@ function minus(item) {
         btnPlus.classList.remove("active");
         btnPlus.classList.add("disactive");
         
-        setTimeout(returnButtons, 750);
+        sleep(800);
+
+        btnPlus.style.display = "none";
+        btnMinus.style.display = "none";
+        btn.removeAttribute("disabled");
+        btnMinus.removeAttribute("disabled");
+        btnPlus.removeAttribute("disabled");
 
         if (Array.from(items.values())
             .every(value => value === 0)) {
