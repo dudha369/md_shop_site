@@ -51,6 +51,30 @@ body {
     border-radius: 12px;
 }
 
+.btn.disabled, img.disabled {
+    background-color: red;
+    cursor: not-allowed;
+}
+
+.btn.disabled::before, .btn.disabled::after,
+.img_wrapper.disabled::before, .img_wrapper.disabled::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: red;
+}
+
+.btn.disabled::before, .img_wrapper.disabled::before {
+    transform: rotate(45deg);
+}
+
+.btn.disabled::after, .img_wrapper.disabled::after {
+    transform: rotate(-45deg);
+}
+
 .name {
     position: absolute;
     bottom: 5px;
@@ -94,12 +118,6 @@ body {
     width: 130px;
     position: relative;
     cursor: pointer;
-}
-
-.btn.disabled, img.disabled {
-    background-color: red;
-    cursor: not-allowed;
-
 }
 
 .btn-plus, .btn-minus {
