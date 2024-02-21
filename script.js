@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function() {
+    let disabledElements = document.querySelectorAll(".disabled");
+    for(let e of disabledElements) {
+        e.setAttribute("disabled", "true");
+        e.innerHTML = "Недоступно";
+    }
+
     let color = getComputedStyle(document.documentElement)
                 .getPropertyValue('--tg-theme-button-color');
     color = color.trim();
@@ -17,12 +23,6 @@ window.onload = function() {
   
     document.documentElement.style
       .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.2)');
-
-      let disabledElements = document.querySelectorAll(".disabled");
-      for(let e of disabledElements) {
-          e.setAttribute("disabled", "true");
-          e.innerHTML = "Недоступно";
-      }      
 };
 
 let items = new Map();
