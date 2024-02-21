@@ -17,7 +17,13 @@ window.onload = function() {
   
     document.documentElement.style
       .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.2)');
-  };
+
+    let disabledElements = document.querySelectorAll(".disabled");
+    for(let e in disabledElements) {
+        e.setAttribute("disabled", "true");
+        e.innerHTML = "Недоступно";
+    }
+};
 
 let items = new Map();
 
@@ -54,10 +60,10 @@ function buy(item) {
     const btnMinus = document.getElementById(item + "-minus");
     const btnPlus = document.getElementById(item + "-plus");
     
-    if (btn.classList.contains("disactive")) {
-        btn.classList.remove("disactive");
-        btnMinus.classList.remove("disactive");
-        btnPlus.classList.remove("disactive");
+    if (btn.classList.contains("passive")) {
+        btn.classList.remove("passive");
+        btnMinus.classList.remove("passive");
+        btnPlus.classList.remove("passive");
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
@@ -125,11 +131,11 @@ function minus(item) {
         btnPlus.innerHTML = "";
 
         btn.classList.remove("active");
-        btn.classList.add("disactive");
+        btn.classList.add("passive");
         btnMinus.classList.remove("active");
-        btnMinus.classList.add("disactive");
+        btnMinus.classList.add("passive");
         btnPlus.classList.remove("active");
-        btnPlus.classList.add("disactive");
+        btnPlus.classList.add("passive");
         
         setTimeout(function(){
             btn.removeAttribute("disabled");
