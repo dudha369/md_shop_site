@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function() {
-    let disabledElements = document.querySelectorAll(".disabled");
-    for(let e of disabledElements) {
+    let disabledButtons = document.getElementsByClassName("btn disabled");
+    for(let e of disabledButtons) {
         e.setAttribute("disabled", "true");
         e.innerHTML = "Недоступно";
     }
@@ -67,7 +67,6 @@ function buy(item) {
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
-    btn.style.cursor = "default";
     btn.innerHTML = 1;
 
     btnMinus.style.display = "block";
@@ -121,7 +120,6 @@ function minus(item) {
     btn.innerHTML = items.get(item);
     
     if (items.get(item) === 0) {
-        btn.style.cursor = "pointer";
         btn.innerHTML = "Придбати";
         
         btnMinus.setAttribute("disabled", "true");
