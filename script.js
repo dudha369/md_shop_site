@@ -9,7 +9,7 @@ window.onload = function() {
     let disabledButtons = document.getElementsByClassName("btn disabled");
     for(let e of disabledButtons) {
         e.setAttribute("disabled", "true");
-        // e.innerHTML = "Недоступно";
+        e.innerHTML = "Недоступно";
     }
 
     let color = getComputedStyle(document.documentElement)
