@@ -96,6 +96,11 @@ body {
     position: relative;
 }
 
+.btn.disabled {
+    background-color: red;
+    cursor: not-allowed;
+}
+
 .btn-plus, .btn-minus {
     display: none;
     height: 35px;
@@ -146,7 +151,7 @@ body {
     width: 35px;
 }
 
-.btn.disactive {
+.btn.passive {
     transition: all .8s;
     content: "";
     width: 130px;
@@ -158,14 +163,14 @@ body {
     100% { width: 1px; }
 }
 
-.btn-minus.disactive {
+.btn-minus.passive {
     content: "";
     animation: narrow .8s forwards;
     transition: all .8s;
     width: 1px;
 }
 
-.btn-plus.disactive {
+.btn-plus.passive {
     content: "";
     animation: narrow .8s forwards;
     transition: all .8s;
