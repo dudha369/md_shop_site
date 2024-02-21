@@ -51,7 +51,7 @@ body {
     border-radius: 12px;
 }
 
-.btn.disabled, .img_wrapper.disabled {
+.btn.disabled {
     background-color: red;
     cursor: not-allowed;
 }
@@ -60,9 +60,9 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  left: -25%;
+  left: -24%;
   width: 145%;
-  height: 4px;
+  height: 3px;
   background: red;
 }
 
