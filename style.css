@@ -60,8 +60,8 @@ body {
   content: "";
   position: absolute;
   top: 50%;
-  left: -22%;
-  width: 144%;
+  left: -22.5%;
+  width: 142%;
   height: 3px;
   background: red;
 }
