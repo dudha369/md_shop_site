@@ -97,28 +97,9 @@ body {
 }
 
 .btn.disabled, img.disabled {
-    /* background-color: red;
-    cursor: not-allowed; */
-    display: inline-block;
-    text-decoration: none;
-    position: relative;
-    
-    overflow: hidden ;
+    background-color: red;
+    cursor: not-allowed;
 
-}
-    
-.btn.disabled::before, img.disabled {
-    content:'';
-    position:absolute;
-    display:block;
-    width:auto;
-    height:auto;
-    left:0;
-    top:0;
-    right:0;
-    bottom:0;
-    background: rgba(0,0,0,0) url(cross.svg) no-repeat;
-    background-size:100% 100%; 
 }
 
 .btn-plus, .btn-minus {
