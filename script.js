@@ -15,6 +15,9 @@ window.onload = function() {
 
         const imgWrapper = document.getElementById("img_wrapper_" + item.id);
         imgWrapper.classList.add("disabled");
+
+        const price = document.getElementById("price_" + item.id);
+        price.style.textDecoration = "line-through";
     }
 
     const color = getComputedStyle(document.documentElement)
