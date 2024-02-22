@@ -6,23 +6,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function() {
-    let disabledButtons = document.getElementsByClassName("btn disabled");
-    for(let e of disabledButtons) {
-        e.setAttribute("disabled", "true");
-        e.innerHTML = "Недоступно";
+    const disabledItems = document.getElementsByClassName("item disabled");
+    for(const item of disabledItems) {
+        const btn = document.getElementById("btn_" + item.id);
+        btn.classList.add("disabled");
+        btn.innerHTML = "Недоступно";
+        btn.setAttribute("disabled", "true");
+
+        const imgWrapper = document.getElementById("img_wrapper_" + item.id);
+        imgWrapper.classList.add("disabled");
     }
 
-    let color = getComputedStyle(document.documentElement)
+    const color = getComputedStyle(document.documentElement)
                 .getPropertyValue('--tg-theme-button-color');
     color = color.trim();
     color = color.substring(1);
   
-    let r = parseInt(color.substring(0, 2), 16);
-    let g = parseInt(color.substring(2, 4), 16);
-    let b = parseInt(color.substring(4, 6), 16);
+    const r = parseInt(color.substring(0, 2), 16);
+    const g = parseInt(color.substring(2, 4), 16);
+    const b = parseInt(color.substring(4, 6), 16);
   
     document.documentElement.style
-      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ',' + g + ',' + b + ',0.2)');
+      .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
 };
 
 let items = new Map();
@@ -42,10 +47,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function buy(item) {
     items.set(item, 1);
-    
-    try {
-        window.navigator.vibrate(25);
-    } catch {}
+
+    if (navigator.vibrate) {
+         navigator.vibrate(200);
+    } else {}
     
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
@@ -56,9 +61,9 @@ function buy(item) {
         tg.MainButton.show();
     }
     
-    const btn = document.getElementById(item);
-    const btnMinus = document.getElementById(item + "-minus");
-    const btnPlus = document.getElementById(item + "-plus");
+    const btn = document.getElementById("btn_" + item);
+    const btnMinus = document.getElementById("btn_" + item + "-minus");
+    const btnPlus = document.getElementById("btn_" + item + "-plus");
     
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
@@ -81,9 +86,9 @@ function buy(item) {
 function plus(item) {
     items.set(item, items.get(item) + 1);
     
-    try {
-        window.navigator.vibrate(25);
-    } catch {}
+    if (navigator.vibrate) {
+         navigator.vibrate(200);
+    } else {}
     
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
@@ -91,7 +96,7 @@ function plus(item) {
         }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
     
-    const btn = document.getElementById(item);
+    const btn = document.getElementById("btn_" + item);
     
     btn.innerHTML = items.get(item);
 }
@@ -103,9 +108,9 @@ function minus(item) {
         items.set(item, items.get(item) - 1);
     }
     
-    try {
-        window.navigator.vibrate(25);
-    } catch {}
+    if (navigator.vibrate) {
+         navigator.vibrate(200);
+    } else {}
     
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
@@ -113,9 +118,9 @@ function minus(item) {
         }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
     
-    const btn = document.getElementById(item);
-    const btnMinus = document.getElementById(item + "-minus");
-    const btnPlus = document.getElementById(item + "-plus");
+    const btn = document.getElementById("btn_" + item);
+    const btnMinus = document.getElementById("btn_" + item + "-minus");
+    const btnPlus = document.getElementById("btn_" + item + "-plus");
     
     btn.innerHTML = items.get(item);
     
