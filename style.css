@@ -28,8 +28,12 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
-#inner_fortnite, #inner_discord {
-    grid-template-rows: 285px 285px;
+#inner_fortnite {
+    grid-template-rows: repeat(4, 285px);
+}
+
+#inner_discord {
+    grid-template-rows: repeat(2, 285px);
 }
 
 #inner_telegram {
