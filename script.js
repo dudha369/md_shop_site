@@ -9,26 +9,57 @@ window.onload = function () {
     const disabledItems = document.getElementsByClassName("item disabled");
     for (const item of disabledItems) {
         const btn = document.getElementById("btn_" + item.id);
-        btn.classList.add("disabled");
-        btn.innerHTML = "Недоступно";
         btn.setAttribute("disabled", "true");
-        
-        const imgWrapper = document.getElementById("img_wrapper_" + item.id);
-        imgWrapper.classList.add("disabled");
+        btn.innerHTML = "Недоступно";
+        btn.classList.add("disabled");
         
         const price = document.getElementById("price_" + item.id);
         price.style.textDecoration = "line-through";
-    }
+        
+        const imgWrapper = document.getElementById("img_wrapper_" + item.id);
+
+        const w = imgWrapper.offsetWidth / 2;
+        const h = (imgWrapper.offsetHeight - 4) / 2;
+        const c = Math.round(Math.sqrt(h * w * 2) * 2) - 4;
+
+        const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
+
+        const leftPosition = -1 * Math.round(w / 2) - 8;
     
+        const cross = document.createElement('style');
+        cross.innerHTML = `
+#img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
+    content: "";
+    position: absolute;
+    top: 48.5%;
+    left: ${leftPosition}px;
+    width: ${c}px;
+    height: 3px;
+    background: red;
+}
+
+#img_wrapper_${item.id}::before {
+    transform: rotate(${angle}deg);
+}
+
+#img_wrapper_${item.id}::after {
+    transform: rotate(-${angle}deg);
+}
+`;
+
+        imgWrapper.appendChild(cross);
+
+    }
+
     const color = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-button-color')
         .trim()
         .substring(1);
-    
+
     const r = parseInt(color.substring(0, 2), 16);
     const g = parseInt(color.substring(2, 4), 16);
     const b = parseInt(color.substring(4, 6), 16);
-    
+
     document.documentElement.style
         .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
 };
@@ -50,7 +81,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 
 function buy(item) {
     items.set(item, 1);
-    
+
     if (navigator.vibrate) {
         navigator.vibrate(200);
     } else {}
@@ -63,7 +94,7 @@ function buy(item) {
     if (!tg.MainButton.isVisible) {
         tg.MainButton.show();
     }
-    
+
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
