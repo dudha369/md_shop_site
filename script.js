@@ -106,7 +106,7 @@ function buy(item) {
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
-    btn.innerHTML = item==="100VB" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    btn.innerHTML = item==="100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
     if(item === "100VB") {
         const price = document.getElementById(`price_${item}`);
         price.innerHTML = "12₴";
@@ -136,7 +136,7 @@ function plus(item) {
     
     const btn = document.getElementById("btn_" + item);
     
-    btn.innerHTML = item==="100VB" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    btn.innerHTML = item==="100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
     if(item === "100VB") {
         const price = document.getElementById(`price_${item}`);
         price.innerHTML = `${items.get(item) * 12}₴`;
