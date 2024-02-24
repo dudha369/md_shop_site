@@ -139,7 +139,7 @@ function plus(item) {
     btn.innerHTML = item==="Gift" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
     if(item === "Gift") {
         const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${items.get(item)*12}₴`;
+        price.innerHTML = `${items.get(item)*0.12}₴`;
     }
 }
 
@@ -167,7 +167,7 @@ function minus(item) {
     btn.innerHTML = item==="Gift" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
     if(item === "Gift") {
         const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${items.get(item)*12}₴`;
+        price.innerHTML = `${items.get(item)*0.12}₴`;
     }
     
     if (items.get(item) === 0) {
