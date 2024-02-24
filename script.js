@@ -24,7 +24,7 @@ window.onload = function () {
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
-        const leftPosition = -1 * Math.round(w / 2) - 8;
+        const leftPosition = Math.round(-0.46 * h);
     
         const cross = document.createElement('style');
         cross.innerHTML = `
