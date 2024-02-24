@@ -105,7 +105,7 @@ body {
     cursor: pointer;
 }
 
-#btn_Gift {
+#btn_100VB {
     width: 145px !important;
 }
 
@@ -139,7 +139,7 @@ body {
     cursor: default;
 }
 
-#btn_Gift.active {
+#btn_100VB.active {
     transition: all .8s;
     width: 80px !important;
 }
