@@ -80,7 +80,7 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 });
 
 function buy(item) {
-    items.set(item, 1);
+    items.set(item, item === "Gift" ? 100 : 1);
 
     if (navigator.vibrate) {
         navigator.vibrate(200);
@@ -106,8 +106,12 @@ function buy(item) {
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
-    btn.innerHTML = 1;
-    
+    btn.innerHTML = item==="Gift" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    if(item === "Gift") {
+        const price = document.getElementById(`price_${item}`);
+        price.innerHTML = "12₴";
+    }
+
     btnMinus.style.display = "block";
     btnMinus.classList.add("active");
     btnPlus.style.display = "block";
@@ -118,7 +122,7 @@ function buy(item) {
 }
 
 function plus(item) {
-    items.set(item, items.get(item) + 1);
+    items.set(item, items.get(item) + (item === "Gift" ? 100 : 1));
     
     if (navigator.vibrate) {
         navigator.vibrate(200);
@@ -132,14 +136,18 @@ function plus(item) {
     
     const btn = document.getElementById("btn_" + item);
     
-    btn.innerHTML = items.get(item);
+    btn.innerHTML = item==="Gift" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    if(item === "Gift") {
+        const price = document.getElementById(`price_${item}`);
+        price.innerHTML = `${items.get(item)*12}₴`;
+    }
 }
 
 function minus(item) {
     if (items.get(item) <= 0) {
         items.set(item, 0);
     } else {
-        items.set(item, items.get(item) - 1);
+        items.set(item, items.get(item) - (item === "Gift" ? 100 : 1));
     }
     
     if (navigator.vibrate) {
@@ -156,7 +164,11 @@ function minus(item) {
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
     
-    btn.innerHTML = items.get(item);
+    btn.innerHTML = item==="Gift" ? `${items.get(item)}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    if(item === "Gift") {
+        const price = document.getElementById(`price_${item}`);
+        price.innerHTML = `${items.get(item)*12}₴`;
+    }
     
     if (items.get(item) === 0) {
         btn.innerHTML = "Придбати";

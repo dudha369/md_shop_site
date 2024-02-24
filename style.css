@@ -105,6 +105,10 @@ body {
     cursor: pointer;
 }
 
+#btn_Gift {
+    width: 145px !important;
+}
+
 .btn-plus, .btn-minus {
     display: none;
     height: 35px;
@@ -133,6 +137,11 @@ body {
     width: 50px;
     background-color: var(--tg-theme-button-color-alpha);
     cursor: default;
+}
+
+#btn_Gift.active {
+    transition: all .8s;
+    width: 80px !important;
 }
 
 @keyframes expand {
