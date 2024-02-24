@@ -60,24 +60,6 @@ body {
     cursor: not-allowed;
 }
 
-.img_wrapper.disabled::before, .img_wrapper.disabled::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -20%;
-  width: 140%;
-  height: 3px;
-  background: red;
-}
-
-.img_wrapper.disabled::before {
-    transform: rotate(45deg);
-}
-
-.img_wrapper.disabled::after {
-    transform: rotate(-45deg);
-}
-
 .name {
     position: absolute;
     bottom: 5px;
