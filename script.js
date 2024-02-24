@@ -20,20 +20,20 @@ window.onload = function () {
 
         const w = imgWrapper.offsetWidth / 2;
         const h = (imgWrapper.offsetHeight - 4) / 2;
-        const c = Math.round(Math.sqrt(h * w * 2) * 2) - 4;
+        const d = Math.round(Math.sqrt(h * w * 2) * 2) - 4;
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
-        const leftPosition = Math.round(-0.46 * h);
+        const leftPosition = w === 75 && h === 100 ? -46 : -28;
     
-        const cross = document.createElement('style');
+        const cross = document.createElement("style");
         cross.innerHTML = `
 #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
     content: "";
     position: absolute;
     top: 48.5%;
     left: ${leftPosition}px;
-    width: ${c}px;
+    width: ${d}px;
     height: 3px;
     background: red;
 }
