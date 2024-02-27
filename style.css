@@ -200,9 +200,9 @@ body {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     font-size: 20px;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
     text-align: center;
     border: none;
     border-radius: 50%;
