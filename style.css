@@ -40,6 +40,10 @@ body {
     grid-template-rows: 235px;
 }
 
+#inner_spotify {
+    grid-template-rows: 295px;
+}
+
 .item {
     text-align: center;
 }
@@ -206,6 +210,7 @@ body {
     filter: invert(100%);
     position: relative;
     right: 0;
+    padding: 5px;
 }
 
 .links {
