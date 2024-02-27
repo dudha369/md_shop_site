@@ -208,18 +208,6 @@ body {
     right: 0;
 }
 
-.info {
-    display: none;
-    position: absolute;
-    z-index: -1;
-    background-color: var(--tg-theme-bg-color-alpha);
-    border: none;
-    border-radius: 10px;
-    border-color: var(--tg-theme-text-color);
-    color: var(--tg-theme-text-color);
-    font-size: 15px;
-}
-
 .links {
     color: var(--tg-theme-link-color);
     display: block;
