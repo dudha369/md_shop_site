@@ -24,7 +24,7 @@ window.onload = function () {
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
-        const leftPosition = w === 75 && h === 100 ? -46 : -28;
+        const leftPosition = h === 100 ? -46 : h === 75 ? -28 : -8;
     
         const cross = document.createElement("style");
         cross.innerHTML = `
@@ -51,17 +51,29 @@ window.onload = function () {
 
     }
 
-    const color = getComputedStyle(document.documentElement)
+    const buttonColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-button-color')
         .trim()
         .substring(1);
 
-    const r = parseInt(color.substring(0, 2), 16);
-    const g = parseInt(color.substring(2, 4), 16);
-    const b = parseInt(color.substring(4, 6), 16);
+    let r = parseInt(buttonColor.substring(0, 2), 16);
+    let g = parseInt(buttonColor.substring(2, 4), 16);
+    let b = parseInt(buttonColor.substring(4, 6), 16);
 
     document.documentElement.style
         .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
+
+    const bgColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--tg-theme-button-color')
+        .trim()
+        .substring(1);
+
+    r = parseInt(bgColor.substring(0, 2), 16);
+    g = parseInt(bgColor.substring(2, 4), 16);
+    b = parseInt(bgColor.substring(4, 6), 16);
+
+    document.documentElement.style
+        .setProperty('--tg-theme-bg-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
 };
 
 let items = new Map();
@@ -78,6 +90,11 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
         .join(";"));
     tg.close();
 });
+
+function info(item) {
+    const e = document.getElementById(`info_${item}`);
+    e.style.display = e.style.display === "block" ? "none" : "block";
+}
 
 function buy(item) {
     items.set(item, 1);
