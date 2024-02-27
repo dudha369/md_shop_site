@@ -95,7 +95,7 @@ function info(item) {
     // const e = document.getElementById(`info_${item}`);
     // e.style.display = e.style.display === "block" ? "none" : "block";
 
-    tg.showAlert("ФФФФФФФФФФ");
+    tg.showAlert("І тут тіпо пріміточка");
 }
 
 function buy(item) {

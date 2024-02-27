@@ -204,6 +204,8 @@ body {
     border-radius: 50%;
     border-color: var(--tg-theme-text-color);
     filter: invert(100%);
+    position: relative;
+    right: 0;
 }
 
 .info {
