@@ -192,7 +192,8 @@ body {
 }
 
 .btn_info {
-    background-color: var(--tg-theme-secondary-bg-color);
+    cursor: pointer;
+    background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     font-size: 20px;
     width: 30px;
@@ -202,11 +203,13 @@ body {
     border: none;
     border-radius: 50%;
     border-color: var(--tg-theme-text-color);
+    filter: invert(100%);
 }
 
 .info {
     display: none;
     position: absolute;
+    z-index: -1;
     background-color: var(--tg-theme-bg-color-alpha);
     border: none;
     border-radius: 10px;

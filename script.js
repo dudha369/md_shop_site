@@ -92,8 +92,10 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 });
 
 function info(item) {
-    const e = document.getElementById(`info_${item}`);
-    e.style.display = e.style.display === "block" ? "none" : "block";
+    // const e = document.getElementById(`info_${item}`);
+    // e.style.display = e.style.display === "block" ? "none" : "block";
+
+    tg.showAlert("ФФФФФФФФФФ");
 }
 
 function buy(item) {
