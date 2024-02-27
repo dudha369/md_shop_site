@@ -110,7 +110,8 @@ body {
 }
 
 #btn_100VB {
-    width: 145px !important;
+    width: 170px !important;
+    /* width: 145px !important; */
 }
 
 .btn-plus, .btn-minus {
@@ -200,7 +201,7 @@ body {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 800;
     width: 22px;
     height: 22px;
     line-height: 22px;
