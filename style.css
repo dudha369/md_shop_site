@@ -205,6 +205,8 @@ body {
     cursor: pointer;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
+    /* background-color: white;
+    color: black; */
     font-size: 24px;
     width: 34px;
     height: 34px;
