@@ -41,7 +41,7 @@ body {
 }
 
 #inner_spotify {
-    grid-template-rows: 295px;
+    grid-template-rows: repeat(2, 295px);
 }
 
 .item {

@@ -5,7 +5,41 @@ document.addEventListener("DOMContentLoaded", function () {
     tg.ready();
 });
 
+const PRICES = {
+    // FORTNITE
+    "100VB": 16,
+    "1000VB": 90,
+    "2800VB": 200,
+    "5000VB": 300,
+    "13500VB": 550,
+    "PVE": 190,
+    "Starter_Pack": 70,
+    "Crew": 170,
+    "Battle_Pass": 85,
+    // DISCORD
+    "Nitro_Basic_month": 50,
+    "Nitro_Basic_year": 150,
+    "Nitro_month": 100,
+    "Nitro_year": 600,
+    // TELEGRAM
+    "Telegram_Premium_month": 85,
+    "Telegram_Premium_year": 630,
+    // SPOTIFY
+    "Spotify_Premium_month": 85,
+    "Spotify_Premium_3month": 260,
+    "Spotify_Premium_6month": 500,
+    "Spotify_Premium_year": 800,
+    // TWITCH SUB
+};
+
+
 window.onload = function () {
+    const prices = document.getElementsByClassName("price");
+    for(const item of prices) {
+        item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
+    }
+
+
     const disabledItems = document.getElementsByClassName("item disabled");
     for (const item of disabledItems) {
         const btn = document.getElementById("btn_" + item.id);
@@ -51,6 +85,7 @@ window.onload = function () {
 
     }
 
+
     const buttonColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-button-color')
         .trim()
@@ -80,11 +115,12 @@ let items = new Map();
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     let res = new Array();
+    const re = /_/g;
     for (const [key, value] of items) {
         if (value === 0) {
             continue;
         }
-        res.push(`${key} x ${value}`);
+        res.push(`${key.replace(re, " ")} x ${value}`);
     }
     tg.sendData(res.sort()
         .join(";"));
