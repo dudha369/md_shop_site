@@ -205,10 +205,10 @@ body {
     cursor: pointer;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    font-size: 20px;
-    width: 22px;
-    height: 22px;
-    line-height: 22px;
+    font-size: 24px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
     text-align: center;
     border: none;
     border-radius: 50%;
@@ -216,7 +216,6 @@ body {
     filter: invert(100%);
     position: relative;
     right: 0;
-    padding: 8px;
 }
 
 .links {
