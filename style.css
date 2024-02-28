@@ -110,8 +110,7 @@ body {
 }
 
 #btn_100VB {
-    width: 170px !important;
-    /* width: 145px !important; */
+    width: 145px !important;
 }
 
 .btn-plus, .btn-minus {
@@ -146,7 +145,7 @@ body {
 
 #btn_100VB.active {
     transition: all .8s;
-    width: 80px !important;
+    width: 75px !important;
 }
 
 @keyframes expand {
