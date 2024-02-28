@@ -200,7 +200,6 @@ body {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
     font-size: 20px;
-    font-weight: 800;
     width: 22px;
     height: 22px;
     line-height: 22px;
@@ -211,7 +210,7 @@ body {
     filter: invert(100%);
     position: relative;
     right: 0;
-    padding: 5px;
+    padding: 8px;
 }
 
 .links {
