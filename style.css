@@ -176,6 +176,13 @@ body {
     background-color: var(--tg-theme-button-color);
 }
 
+.btn.big.passive {
+    transition: all .8s;
+    content: "";
+    width: 145px !important;
+    background-color: var(--tg-theme-button-color);
+}
+
 @keyframes narrow {
     0% { width: 35px; }
     100% { width: 1px; }
