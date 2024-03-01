@@ -55,20 +55,18 @@ body {
 }
 
 .img {
-    border: none;
-    border-radius: 12px;
     border: double var(--tg-theme-text-color);
+    border-radius: 12px;
+    transition: all 0.4s;
 }
-
+  
 .img.active {
-    transition: all .4s;
     border: solid var(--tg-theme-text-color);
 }
-
+  
 .img.passive {
-    transition: all .4s;
     border: double var(--tg-theme-text-color);
-}
+}  
     
 .btn.disabled {
     background-color: red;
