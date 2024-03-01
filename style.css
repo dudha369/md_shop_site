@@ -4,6 +4,9 @@
     font-family: "Roboto", sans-serif;
     color: var(--tg-theme-text-color);
     user-select: none !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
 }
 
 body {
@@ -205,8 +208,6 @@ body {
     cursor: pointer;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    /* background-color: white;
-    color: black; */
     font-size: 24px;
     width: 28px;
     height: 28px;
@@ -235,7 +236,7 @@ body {
     height: 48px;
     vertical-align: middle;
     filter: invert(var(--invert-to-black));
-    /* filter: invert(100%); */
+    filter: invert(100%);
     padding: 15px;
 }
 
