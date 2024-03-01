@@ -57,17 +57,17 @@ body {
 .img {
     border: double var(--tg-theme-text-color);
     border-radius: 12px;
-    /* transition: all 0.4s; */
+    transition: all 0.4s;
 }
   
 .img.active {
     content: "";
-    /* border: solid var(--tg-theme-text-color); */
+    border: solid var(--tg-theme-text-color);
 }
   
 .img.passive {
     content: "";
-    /* border: double var(--tg-theme-text-color); */
+    border: double var(--tg-theme-text-color);
 }  
     
 .btn.disabled {
