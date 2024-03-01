@@ -208,10 +208,10 @@ body {
     cursor: pointer;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    font-size: 24px;
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
     border: none;
     border-radius: 50%;
