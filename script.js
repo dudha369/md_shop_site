@@ -159,7 +159,7 @@ function buy(item) {
         .trim()
         .substring(1);
 
-    img.style.border = `solid ${borderColor}`;
+    img.style.border = `dashed ${borderColor}`;
     
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
@@ -240,7 +240,7 @@ function minus(item) {
             .trim()
             .substring(1);
 
-        img.style.border = `dashed ${borderColor}`;
+        img.style.border = `solid ${borderColor}`;
 
         btn.innerHTML = "Придбати";
         

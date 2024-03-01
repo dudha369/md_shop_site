@@ -52,7 +52,7 @@ body {
     display: inline-block;
     position: relative;
     text-align: center;
-    border: dashed var(--tg-theme-text-color);
+    border: solid var(--tg-theme-text-color);
 }
 
 .img {
