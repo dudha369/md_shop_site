@@ -4,7 +4,6 @@
     font-family: "Roboto", sans-serif;
     color: var(--tg-theme-text-color);
     user-select: none;
-    backface-visibility: hidden;
 }
 
 body {
