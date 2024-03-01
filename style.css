@@ -55,21 +55,21 @@ body {
     border: double var(--tg-theme-text-color);
 }
 
-.img_wrapper.active {
-    transition: all .4s;
-    border: solid var(--tg-theme-text-color);
-}
-
-.img_wrapper.passive {
-    transition: all .4s;
-    border: double var(--tg-theme-text-color);
-}
-
 .img {
     border: none;
     border-radius: 12px;
 }
 
+.img.active {
+    transition: all .4s;
+    border: solid var(--tg-theme-text-color);
+}
+
+.img.passive {
+    transition: all .4s;
+    border: double var(--tg-theme-text-color);
+}
+    
 .btn.disabled {
     background-color: red;
     cursor: not-allowed;

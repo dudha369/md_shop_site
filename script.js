@@ -152,7 +152,7 @@ function buy(item) {
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
-    const img = document.getElementById("img_wrapper_" + item);
+    const img = document.getElementById("img_" + item);
     
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
@@ -236,7 +236,7 @@ function minus(item) {
         btnMinus.innerHTML = "";
         btnPlus.innerHTML = "";
 
-        const img = document.getElementById("img_wrapper_" + item);
+        const img = document.getElementById("img_" + item);
         
         btn.classList.remove("active");
         btn.classList.add("passive");
