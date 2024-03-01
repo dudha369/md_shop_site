@@ -233,6 +233,15 @@ function minus(item) {
     }
     
     if (items.get(item) === 0) {
+        const img = document.getElementById("img_wrapper_" + item);
+
+        const borderColor = getComputedStyle(document.documentElement)
+            .getPropertyValue('--tg-theme-text-color')
+            .trim()
+            .substring(1);
+
+        img.style.border = `dashed ${borderColor}`;
+
         btn.innerHTML = "Придбати";
         
         btnMinus.setAttribute("disabled", "true");
