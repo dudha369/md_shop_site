@@ -61,12 +61,10 @@ body {
 }
   
 .img.active {
-    content: "";
     border: solid var(--tg-theme-text-color);
 }
   
 .img.passive {
-    content: "";
     border: double var(--tg-theme-text-color);
 }  
     
