@@ -99,7 +99,7 @@ window.onload = function () {
         .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
 
     const bgColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--tg-theme-button-color')
+        .getPropertyValue('--tg-theme-bg-color')
         .trim()
         .substring(1);
 
@@ -107,8 +107,14 @@ window.onload = function () {
     g = parseInt(bgColor.substring(2, 4), 16);
     b = parseInt(bgColor.substring(4, 6), 16);
 
+    if (1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255 < 0.5){
     document.documentElement.style
-        .setProperty('--tg-theme-bg-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
+    .setProperty('--invert-to-black', '100%');
+    }
+    else{
+    document.documentElement.style
+    .setProperty('--tg-theme-bg-color-alpha', '0');
+    }
 };
 
 let items = new Map();
