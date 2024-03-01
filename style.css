@@ -236,7 +236,6 @@ body {
     height: 48px;
     vertical-align: middle;
     filter: invert(var(--invert-to-black));
-    filter: invert(100%);
     padding: 15px;
 }
 
