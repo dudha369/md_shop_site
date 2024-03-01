@@ -224,15 +224,26 @@ body {
     color: var(--tg-theme-link-color);
     display: block;
     font-size: 15px;
-    padding-top: 50px;
+    padding-top: 60px;
     padding-bottom: 10px;
     text-align: center;
 }
 
 .links img {
+    transition: all .2s;
     width: 48px;
     height: 48px;
     vertical-align: middle;
     filter: invert(var(--invert-to-black));
+    filter: invert(100%);
     padding: 15px;
+}
+
+.links img:hover {
+    transition: all .2s;
+    transform: scale(1.1);
+}
+
+.links img:active {
+    transform: scale(1.2);
 }
