@@ -52,6 +52,7 @@ body {
     display: inline-block;
     position: relative;
     text-align: center;
+    border: dashed var(--tg-theme-text-color);
 }
 
 .img {
@@ -212,7 +213,6 @@ body {
     text-align: center;
     border: none;
     border-radius: 50%;
-    border-color: var(--tg-theme-text-color);
     filter: invert(100%);
     position: relative;
     right: 0;

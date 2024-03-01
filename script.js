@@ -152,6 +152,14 @@ function buy(item) {
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
+    const img = document.getElementById("img_wrapper_" + item);
+
+    const borderColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--tg-theme-text-color')
+        .trim()
+        .substring(1);
+
+    img.style.border = `solid ${borderColor}`;
     
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
