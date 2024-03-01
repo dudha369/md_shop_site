@@ -52,7 +52,17 @@ body {
     display: inline-block;
     position: relative;
     text-align: center;
+    border: double var(--tg-theme-text-color);
+}
+
+.img_wrapper.active {
+    transition: all .4s;
     border: solid var(--tg-theme-text-color);
+}
+
+.img_wrapper.passive {
+    transition: all .4s;
+    border: double var(--tg-theme-text-color);
 }
 
 .img {

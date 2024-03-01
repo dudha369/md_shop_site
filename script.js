@@ -153,18 +153,12 @@ function buy(item) {
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
     const img = document.getElementById("img_wrapper_" + item);
-
-    const borderColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--tg-theme-text-color')
-        .trim()
-        .substring(1);
-
-    img.style.border = `dashed ${borderColor}`;
     
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
         btnMinus.classList.remove("passive");
         btnPlus.classList.remove("passive");
+        img.classList.remove("passive");
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
@@ -178,6 +172,7 @@ function buy(item) {
     btnMinus.classList.add("active");
     btnPlus.style.display = "block";
     btnPlus.classList.add("active");
+    img.classList.add("active");
     
     btnMinus.innerHTML = "-";
     btnPlus.innerHTML = "+";
@@ -233,15 +228,6 @@ function minus(item) {
     }
     
     if (items.get(item) === 0) {
-        const img = document.getElementById("img_wrapper_" + item);
-
-        const borderColor = getComputedStyle(document.documentElement)
-            .getPropertyValue('--tg-theme-text-color')
-            .trim()
-            .substring(1);
-
-        img.style.border = `solid ${borderColor}`;
-
         btn.innerHTML = "Придбати";
         
         btnMinus.setAttribute("disabled", "true");
@@ -249,6 +235,8 @@ function minus(item) {
         
         btnMinus.innerHTML = "";
         btnPlus.innerHTML = "";
+
+        const img = document.getElementById("img_wrapper_" + item);
         
         btn.classList.remove("active");
         btn.classList.add("passive");
@@ -256,6 +244,8 @@ function minus(item) {
         btnMinus.classList.add("passive");
         btnPlus.classList.remove("active");
         btnPlus.classList.add("passive");
+        img.classList.remove("active");
+        img.classList.add("passive")
         
         setTimeout(function () {
             btn.removeAttribute("disabled");
