@@ -57,7 +57,6 @@ body {
 .img {
     border: double var(--tg-theme-text-color);
     border-radius: 12px;
-    transition: all 0.4s;
 }
   
 .img.active {
