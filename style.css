@@ -62,13 +62,11 @@ body {
 
 .img.active {
     transition: all .4s;
-    border-radius: 12px;
     border: solid var(--tg-theme-text-color);
 }
 
 .img.passive {
     transition: all .4s;
-    border-radius: 12px;
     border: double var(--tg-theme-text-color);
 }
     
