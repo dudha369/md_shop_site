@@ -55,19 +55,16 @@ body {
 }
 
 .img {
-    display: block;
-    /* border: double var(--tg-theme-text-color); */
+    border: double var(--tg-theme-text-color);
     border-radius: 12px;
 }
   
 .img.active {
-    display: block;
-    /* border: solid var(--tg-theme-text-color); */
+    border: solid var(--tg-theme-text-color);
 }
   
 .img.passive {
-    display: block;
-    /* border: double var(--tg-theme-text-color); */
+    border: double var(--tg-theme-text-color);
 }  
     
 .btn.disabled {
@@ -153,7 +150,7 @@ body {
     cursor: default;
 }
 
-#btn_100VB.active {
+.btn.big.active {
     transition: all .8s;
     width: 75px !important;
 }
