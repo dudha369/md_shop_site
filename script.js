@@ -58,7 +58,12 @@ window.onload = function () {
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
-        const leftPosition = h === 100 ? -45 : h === 75 ? -28 : -8;
+        const closestHeight = (g) => Array(100, 85, 75).reduce((p,c) => Math.abs(c-g) < Math.abs(p-g) ? c : p);
+
+        let leftPosition = new Map();
+        leftPosition.set(100, -45);
+        leftPosition.set(85, -8);
+        leftPosition.set(75, -28);
     
         const cross = document.createElement("style");
         cross.innerHTML = `
@@ -66,7 +71,7 @@ window.onload = function () {
     content: "";
     position: absolute;
     top: 48.5%;
-    left: ${leftPosition}px;
+    left: ${leftPosition.get(closestHeight(h))}px;
     width: ${d}px;
     height: 3px;
     background: red;
