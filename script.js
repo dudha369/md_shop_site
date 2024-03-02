@@ -52,8 +52,8 @@ window.onload = function () {
         
         const imgWrapper = document.getElementById("img_wrapper_" + item.id);
 
-        const w = Math.round(imgWrapper.offsetWidth / 2);
-        const h = Math.round((imgWrapper.offsetHeight - 4) / 2);
+        const w = imgWrapper.offsetWidth / 2;
+        const h = (imgWrapper.offsetHeight - 4) / 2;
         const d = Math.round(Math.sqrt(h * w * 2) * 2) - 4;
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));

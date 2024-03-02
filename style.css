@@ -55,16 +55,19 @@ body {
 }
 
 .img {
-    border: double var(--tg-theme-text-color);
+    display: block;
+    /* border: double var(--tg-theme-text-color); */
     border-radius: 12px;
 }
   
 .img.active {
-    border: solid var(--tg-theme-text-color);
+    display: block;
+    /* border: solid var(--tg-theme-text-color); */
 }
   
 .img.passive {
-    border: double var(--tg-theme-text-color);
+    display: block;
+    /* border: double var(--tg-theme-text-color); */
 }  
     
 .btn.disabled {
