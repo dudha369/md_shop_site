@@ -209,6 +209,14 @@ body {
     width: 1px;
 }
 
+.VB {
+    border: none;
+    border-radius: 50%;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+
 .btn_info {
     cursor: pointer;
     background-color: var(--tg-theme-bg-color);
