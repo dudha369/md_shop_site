@@ -122,6 +122,10 @@ window.onload = function () {
     tg.ready();
 };
 
+function changeMainButton(){
+    //TODO
+}
+
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     let res = new Array();
