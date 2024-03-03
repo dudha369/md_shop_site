@@ -43,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const price = document.getElementById("price_" + item.id);
         price.style.textDecoration = "line-through";
 
-        const imgWrapper = document.getElementById("img_wrapper_" + item.id);
+        const img = document.getElementById("img_wrapper_" + item.id);
 
-        const w = imgWrapper.offsetWidth / 2;
-        const h = (imgWrapper.offsetHeight - 4) / 2;
-        const d = Math.round(Math.sqrt(h * w * 2) * 2) - 4;
+        const w = (img.offsetWidth - 4.8) / 2; // border 4.8
+        const h = (img.offsetHeight - 4.8) / 2; // border 4.8
+        const d = Math.round(Math.sqrt(h * w * 2) * 2) - 4; // rounded edges(-4)
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
