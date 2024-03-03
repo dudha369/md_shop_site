@@ -116,7 +116,7 @@ body {
     cursor: pointer;
 }
 
-#btn_100VB {
+.btn.big {
     width: 145px;
 }
 
