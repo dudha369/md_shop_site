@@ -157,6 +157,7 @@ function buy(item) {
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
     const img = document.getElementById("img_" + item);
+    const price = document.getElementById(`price_${item}`);
 
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
@@ -167,41 +168,36 @@ function buy(item) {
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
     btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img class="VB" src="images/Fortnite/vbucks.webp" alt="VB" title="VB">` : items.get(item);
-    if (item === "100VB") {
-        const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${PRICES[item]}₴`;
-    }
+    price.innerHTML = `${PRICES[item]}₴`;
 
     btnMinus.style.display = "block";
     btnMinus.classList.add("active");
     btnPlus.style.display = "block";
     btnPlus.classList.add("active");
     img.classList.add("active");
-
+    
     btnMinus.innerHTML = "-";
     btnPlus.innerHTML = "+";
 }
 
 function plus(item) {
     items.set(item, items.get(item) + 1);
-
+    
     if (navigator.vibrate) {
         navigator.vibrate(200);
     } else {}
-
+    
     const countOfItems = Array.from(items.values())
-        .reduce(function (sum, elem) {
-            return sum + elem;
-        }, 0);
+    .reduce(function (sum, elem) {
+        return sum + elem;
+    }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-
+    
     const btn = document.getElementById("btn_" + item);
+    const price = document.getElementById(`price_${item}`);
 
     btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
-    if (item === "100VB") {
-        const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
-    }
+    price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
 }
 
 function minus(item) {
@@ -224,12 +220,10 @@ function minus(item) {
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
+    const price = document.getElementById(`price_${item}`);
 
     btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
-    if (item === "100VB") {
-        const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
-    }
+    price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
 
     if (items.get(item) === 0) {
         btn.innerHTML = "Придбати";
@@ -250,6 +244,7 @@ function minus(item) {
         btnPlus.classList.add("passive");
         img.classList.remove("active");
         img.classList.add("passive");
+        price.innerHTML = `${PRICES[item]}₴`;
 
         setTimeout(function () {
             btn.removeAttribute("disabled");
