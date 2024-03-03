@@ -1,10 +1,5 @@
 const tg = window.Telegram.WebApp;
-
-document.addEventListener("DOMContentLoaded", function () {
-    tg.expand();
-    tg.ready();
-});
-
+let items = new Map();
 const PRICES = {
     // FORTNITE
     "100VB": 16,
@@ -32,7 +27,7 @@ const PRICES = {
     // TWITCH SUB
 };
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     const prices = document.getElementsByClassName("price");
     for (const item of prices) {
         item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
@@ -120,9 +115,13 @@ window.onload = function () {
         .substring(1);
 
     document.documentElement.style.setProperty('--tg-theme-button-color-alpha', `rgba(${buttonColor.substring(0, 2)}, ${buttonColor.substring(2, 4)}, ${buttonColor.substring(4, 6)}, 0.2)`);
+});
+
+window.onload = function () {
+    tg.expand();
+    tg.ready();
 };
 
-let items = new Map();
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     let res = new Array();
