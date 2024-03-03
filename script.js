@@ -32,13 +32,11 @@ const PRICES = {
     // TWITCH SUB
 };
 
-
 window.onload = function () {
     const prices = document.getElementsByClassName("price");
-    for(const item of prices) {
+    for (const item of prices) {
         item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
     }
-
 
     const disabledItems = document.getElementsByClassName("item disabled");
     for (const item of disabledItems) {
@@ -46,10 +44,10 @@ window.onload = function () {
         btn.setAttribute("disabled", "true");
         btn.innerHTML = "Недоступно";
         btn.classList.add("disabled");
-        
+
         const price = document.getElementById("price_" + item.id);
         price.style.textDecoration = "line-through";
-        
+
         const imgWrapper = document.getElementById("img_wrapper_" + item.id);
 
         const w = imgWrapper.offsetWidth / 2;
@@ -58,13 +56,14 @@ window.onload = function () {
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
-        const closestHeight = (g) => Array(100, 85, 75).reduce((p,c) => Math.abs(c-g) < Math.abs(p-g) ? c : p);
+        const closestHeight = (g) => Array(100, 85, 75)
+            .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 
         let leftPosition = new Map();
         leftPosition.set(100, -45);
         leftPosition.set(85, -8);
         leftPosition.set(75, -28);
-    
+
         const cross = document.createElement("style");
         cross.innerHTML = `
 #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
@@ -87,39 +86,40 @@ window.onload = function () {
 `;
 
         imgWrapper.appendChild(cross);
-
     }
-
-
-    const buttonColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--tg-theme-button-color')
-        .trim()
-        .substring(1);
-
-    let r = parseInt(buttonColor.substring(0, 2), 16);
-    let g = parseInt(buttonColor.substring(2, 4), 16);
-    let b = parseInt(buttonColor.substring(4, 6), 16);
-
-    document.documentElement.style
-        .setProperty('--tg-theme-button-color-alpha', 'rgba(' + r + ', ' + g + ', ' + b + ', 0.2)');
 
     const bgColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-bg-color')
         .trim()
         .substring(1);
 
-    r = parseInt(bgColor.substring(0, 2), 16);
-    g = parseInt(bgColor.substring(2, 4), 16);
-    b = parseInt(bgColor.substring(4, 6), 16);
+    if (bgColor === '') {
+        document.documentElement.style
+            .setProperty('--tg-theme-bg-color', 'black');
+        document.documentElement.style
+            .setProperty('--tg-theme-button-color', 'blue');
+        document.documentElement.style
+            .setProperty('--tg-theme-button-text-color', 'white');
+        document.documentElement.style
+            .setProperty('--tg-theme-link-color', 'lightblue');
+        document.documentElement.style
+            .setProperty('--tg-theme-text-color', 'white');
+    }
 
-    if (1 - (0.299 * r + 0.587 * g + 0.114 * b) / 255 < 0.5){
-    document.documentElement.style
-    .setProperty('--invert-to-black', '100%');
+    if (1 - (0.299 * parseInt(bgColor.substring(0, 2), 16) + 0.587 * parseInt(bgColor.substring(2, 4), 16) + 0.114 * parseInt(bgColor.substring(4, 6), 16)) / 255 < 0.5) {
+        document.documentElement.style
+            .setProperty('--invert-to-black', '100%');
+    } else {
+        document.documentElement.style
+            .setProperty('--tg-theme-bg-color-alpha', '0');
     }
-    else{
-    document.documentElement.style
-    .setProperty('--tg-theme-bg-color-alpha', '0');
-    }
+
+    const buttonColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--tg-theme-button-color')
+        .trim()
+        .substring(1);
+
+    document.documentElement.style.setProperty('--tg-theme-button-color-alpha', `rgba(${buttonColor.substring(0, 2)}, ${buttonColor.substring(2, 4)}, ${buttonColor.substring(4, 6)}, 0.2)`);
 };
 
 let items = new Map();
@@ -144,7 +144,7 @@ function buy(item) {
     if (navigator.vibrate) {
         navigator.vibrate(200);
     } else {}
-    
+
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
             return sum + elem;
@@ -158,7 +158,7 @@ function buy(item) {
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
     const img = document.getElementById("img_" + item);
-    
+
     if (btn.classList.contains("passive")) {
         btn.classList.remove("passive");
         btnMinus.classList.remove("passive");
@@ -167,8 +167,8 @@ function buy(item) {
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
-    btn.innerHTML = item==="100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
-    if(item === "100VB") {
+    btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    if (item === "100VB") {
         const price = document.getElementById(`price_${item}`);
         price.innerHTML = "16₴";
     }
@@ -178,30 +178,30 @@ function buy(item) {
     btnPlus.style.display = "block";
     btnPlus.classList.add("active");
     img.classList.add("active");
-    
+
     btnMinus.innerHTML = "-";
     btnPlus.innerHTML = "+";
 }
 
 function plus(item) {
     items.set(item, items.get(item) + 1);
-    
+
     if (navigator.vibrate) {
         navigator.vibrate(200);
     } else {}
-    
+
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
             return sum + elem;
         }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-    
+
     const btn = document.getElementById("btn_" + item);
-    
-    btn.innerHTML = item==="100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
-    if(item === "100VB") {
+
+    btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    if (item === "100VB") {
         const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${items.get(item) * 16}₴`;
+        price.innerHTML = `${items.get(item) * PRICES.get(item)}₴`;
     }
 }
 
@@ -211,38 +211,38 @@ function minus(item) {
     } else {
         items.set(item, items.get(item) - 1);
     }
-    
+
     if (navigator.vibrate) {
         navigator.vibrate(200);
     } else {}
-    
+
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
             return sum + elem;
         }, 0);
     tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-    
+
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
     const btnPlus = document.getElementById("btn_" + item + "-plus");
-    
-    btn.innerHTML = item==="100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
-    if(item === "100VB") {
+
+    btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    if (item === "100VB") {
         const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${items.get(item) * 16}₴`;
+        price.innerHTML = `${items.get(item) * PRICES.get(item)}₴`;
     }
-    
+
     if (items.get(item) === 0) {
         btn.innerHTML = "Придбати";
-        
+
         btnMinus.setAttribute("disabled", "true");
         btnPlus.setAttribute("disabled", "true");
-        
+
         btnMinus.innerHTML = "";
         btnPlus.innerHTML = "";
 
         const img = document.getElementById("img_" + item);
-        
+
         btn.classList.remove("active");
         btn.classList.add("passive");
         btnMinus.classList.remove("active");
@@ -250,8 +250,8 @@ function minus(item) {
         btnPlus.classList.remove("active");
         btnPlus.classList.add("passive");
         img.classList.remove("active");
-        img.classList.add("passive")
-        
+        img.classList.add("passive");
+
         setTimeout(function () {
             btn.removeAttribute("disabled");
             btnMinus.removeAttribute("disabled");
@@ -259,7 +259,7 @@ function minus(item) {
             btnPlus.style.display = "none";
             btnMinus.style.display = "none";
         }, 750);
-        
+
         if (Array.from(items.values())
             .every(value => value === 0)) {
             tg.MainButton.hide();
