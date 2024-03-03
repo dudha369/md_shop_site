@@ -169,7 +169,7 @@ function buy(item) {
     btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img class="VB" src="images/Fortnite/vbucks.webp" alt="VB" title="VB">` : items.get(item);
     if (item === "100VB") {
         const price = document.getElementById(`price_${item}`);
-        price.innerHTML = `${PRCIES[item]}₴`;
+        price.innerHTML = `${PRICES[item]}₴`;
     }
 
     btnMinus.style.display = "block";
