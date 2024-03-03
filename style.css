@@ -3,7 +3,7 @@
     padding: 0;
     font-family: "Roboto", sans-serif;
     color: var(--tg-theme-text-color);
-    user-select: none;
+    user-select: none !important;
 }
 
 body {
@@ -117,7 +117,7 @@ body {
 }
 
 #btn_100VB {
-    width: 145px !important;
+    width: 145px;
 }
 
 .btn-plus, .btn-minus {
@@ -152,7 +152,7 @@ body {
 
 .btn.big.active {
     transition: all .8s;
-    width: 75px !important;
+    width: 75px;
 }
 
 @keyframes expand {
@@ -186,7 +186,7 @@ body {
 .btn.big.passive {
     transition: all .8s;
     content: "";
-    width: 145px !important;
+    width: 145px;
     background-color: var(--tg-theme-button-color);
 }
 
