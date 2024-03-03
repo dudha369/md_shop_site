@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 `;
 
-        imgWrapper.appendChild(cross);
+        img.appendChild(cross);
     }
 
     const bgColor = getComputedStyle(document.documentElement)
