@@ -47,17 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const w = (img.offsetWidth - 4.8) / 2; // border 4.8
         const h = (img.offsetHeight - 4.8) / 2; // border 4.8
-        const d = Math.round(Math.sqrt(h * w * 2) * 2);
+        const d = Math.round(Math.sqrt(h * w * 2) * 2) + 4.8 + 2; // border 4.8; additional 2
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
-        const closestHeight = (g) => Array(100, 85, 75)
+        const closestHeight = (g) => Array(100, 80, 75)
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 
         let leftPosition = new Map();
-        leftPosition.set(100, -42);
-        leftPosition.set(85, -8);
-        leftPosition.set(75, -26);
+        leftPosition.set(100, -44);
+        leftPosition.set(80, 0);
+        leftPosition.set(75, -28);
 
         const cross = document.createElement("style");
         cross.innerHTML = `
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
     content: "";
     position: absolute;
-    top: 48%;
+    top: 47.9%;
     left: ${leftPosition.get(closestHeight(h))}px;
     width: ${d}px;
     height: 3px;
@@ -99,8 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imgWrapper.appendChild(cross);
     }
 
-document.documentElement.style
-    .setProperty('--tent-height', Math.round(window.innerWidth * .2));
+    if(window.innerWidth>800) document.querySelector(".tent").style.display = "none";
 
     const bgColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-bg-color')
