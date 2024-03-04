@@ -11,9 +11,12 @@ body {
 }
 
 .tent {
+    max-width: 1252px;
+    max-height: 336px;
     width: 100%;
-    height: 20vw;
-    align-items: center;
+    height: 18vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .category {

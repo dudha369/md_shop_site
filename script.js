@@ -65,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
     cursor: not-allowed;
 }
 
+#img_${item.id} {
+    border: solid red;
+}
+
 #btn_${item.id} {
     background-color: red;
 }
@@ -76,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
     content: "";
     position: absolute;
-    top: 49%;
+    top: 48%;
     left: ${leftPosition.get(closestHeight(h))}px;
     width: ${d}px;
     height: 3px;
