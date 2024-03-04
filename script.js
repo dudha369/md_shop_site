@@ -95,6 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
         imgWrapper.appendChild(cross);
     }
 
+document.documentElement.style
+    .setProperty('--tent-height', Math.round(window.innerWidth * .2));
+
     const bgColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-bg-color')
         .trim()

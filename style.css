@@ -10,6 +10,12 @@ body {
     background-color: var(--tg-theme-bg-color);
 }
 
+.tent {
+    width: 100%;
+    height: 20vw;
+    align-items: center;
+}
+
 .category {
     padding: 5px;
     color: white;
@@ -55,16 +61,16 @@ body {
 }
 
 .img {
-    border: double var(--tg-theme-text-color);
+    border: solid var(--tg-theme-text-color);
     border-radius: 12px;
 }
   
 .img.active {
-    border: solid var(--tg-theme-text-color);
+    border: solid var(--tg-theme-button-color);
 }
   
 .img.passive {
-    border: double var(--tg-theme-text-color);
+    border: solid var(--tg-theme-text-color);
 }
 
 .name {
