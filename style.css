@@ -65,11 +65,6 @@ body {
   
 .img.passive {
     border: double var(--tg-theme-text-color);
-}  
-    
-.btn.disabled {
-    background-color: red;
-    cursor: not-allowed;
 }
 
 .name {

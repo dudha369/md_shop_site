@@ -38,12 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const btn = document.getElementById("btn_" + item.id);
         btn.setAttribute("disabled", "true");
         btn.innerHTML = "Недоступно";
-        btn.classList.add("disabled");
 
         const price = document.getElementById("price_" + item.id);
         price.style.textDecoration = "line-through";
-
-        const img = document.getElementById("img_wrapper_" + item.id);
+        
+        const imgWrapper = document.getElementById("img_wrapper_" + item.id);
+        const img = document.getElementById("img_" + item.id);
 
         const w = (img.offsetWidth - 4.8) / 2; // border 4.8
         const h = (img.offsetHeight - 4.8) / 2; // border 4.8
@@ -61,6 +61,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const cross = document.createElement("style");
         cross.innerHTML = `
+#img_wrapper_${item.id}, #btn_${item.id} {
+    cursor: not-allowed;
+}
+
+#btn_${item.id} {
+    background-color: red;
+}
+
+#price_${item.id} {
+    text-decoration: line-throught;
+}
+
 #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
     content: "";
     position: absolute;
@@ -80,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 `;
 
-        img.appendChild(cross);
+        imgWrapper.appendChild(cross);
     }
 
     const bgColor = getComputedStyle(document.documentElement)
