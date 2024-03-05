@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const w = (img.offsetWidth - 4.8) / 2; // border 4.8
         const h = (img.offsetHeight - 4.8) / 2; // border 4.8
-        const d = Math.round(Math.sqrt(h * w * 2) * 2) + 4.8 + 2; // border 4.8; additional 2
+        const d = Math.round(Math.sqrt(h * w * 2) * 2) + 4.8; // border 4.8
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
