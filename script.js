@@ -154,7 +154,7 @@ function changeMainButton(){
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, elem) {
             return sum + elem;
-        }, 0) - items.get("100VB");
+        }, 0) - (items.get("100VB") === undefined ? 0 : items.get("100VB"));
 
     const price = Array.from(items.values())
         .reduce(function (sum, elem) {
