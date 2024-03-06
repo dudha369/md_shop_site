@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 
         let leftPosition = new Map();
-        leftPosition.set(100, -48);
-        leftPosition.set(80, -4);
-        leftPosition.set(75, -32);
+        leftPosition.set(100, -47);
+        leftPosition.set(80, -3);
+        leftPosition.set(75, -31);
 
         const cross = document.createElement("style");
         cross.innerHTML = `
@@ -154,17 +154,21 @@ function changeMainButton(){
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, count) {
             return sum + count;
-        }, 0) - (items.get("100VB") === undefined ? 0 : items.get("100VB"));
+        }, 0) - (items.get("100VB") === undefined ? 0 : items.get("100VB") - 1);
 
-    let price = Array.from(items.keys())
-    .reduce(function (sum, item) {
-        return sum + PRICES[item] * items.get(item);
-    }, 0);
-    
-    if(countOfItems > 0 && !tg.MainButton.isVisible) tg.MainButton.show();
+    if(countOfItems > 0){
+        const price = Array.from(items.keys())
+        .reduce(function (sum, item) {
+            return sum + PRICES[item] * items.get(item);
+        }, 0);
+        if(countOfItems === 1) tg.MainButton.setText(`Придбати товар на суму ${price}₴`);
+        else tg.MainButton.setText(`Придбати ${countOfItems} товарів на суму ${price}₴`);
 
-    if(countOfItems === 1) tg.MainButton.setText(`Придбати товар на суму ${price}₴`);
-    else tg.MainButton.setText(`Придбати ${countOfItems} товарів на суму ${price}₴`);
+        if(!tg.MainButton.isVisible) tg.MainButton.show();
+    } 
+    else {
+        if(tg.MainButton.isVisible) tg.MainButton.hide();
+    }
 }
 
 
