@@ -14,7 +14,7 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-width: 800px;
+    max-width: 1400px;
     width: 100%;
     max-height: 100px;
     height: 15vw;
@@ -47,7 +47,7 @@ body {
 }
 
 #inner_telegram {
-    grid-template-rows: 235px;
+    grid-template-rows: repeat(1, 235px);
 }
 
 #inner_spotify {
@@ -122,7 +122,6 @@ body {
     margin: auto;
 }
 
-
 .buttons_big {
     display: flex;
     justify-content: space-between;
@@ -186,36 +185,32 @@ body {
 }
 
 @keyframes expand {
-    0% { width: 1px; }
-    100% { width: 35px; }
+    from { width: 1px; }
+    to { width: 35px; }
 }
 
 .btn-minus.active {
     content: "";
     display: block;
     animation: expand .8s forwards;
-    transition: all .8s;
-    width: 35px;
 }
 
 .btn-plus.active {
     content: "";
     display: block;
     animation: expand .8s forwards;
-    transition: all .8s;
-    width: 35px;
 }
 
 .btn.passive {
-    transition: all .8s;
     content: "";
+    transition: all .8s;
     width: 130px;
     background-color: var(--tg-theme-button-color);
 }
 
 .btn.big.passive {
-    transition: all .8s;
     content: "";
+    transition: all .8s;
     width: 145px;
     background-color: var(--tg-theme-button-color);
 }
@@ -228,15 +223,11 @@ body {
 .btn-minus.passive {
     content: "";
     animation: narrow .8s forwards;
-    transition: all .8s;
-    width: 1px;
 }
 
 .btn-plus.passive {
     content: "";
     animation: narrow .8s forwards;
-    transition: all .8s;
-    width: 1px;
 }
 
 .VB {
@@ -288,4 +279,13 @@ body {
 
 .links img:active {
     transform: scale(1.2);
+}
+
+.spike {
+    padding-top: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 235px;
+    height: 180px;
 }

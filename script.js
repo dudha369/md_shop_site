@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imgWrapper.appendChild(cross);
     }
 
-    if(window.innerWidth>800) document.querySelector(".tent").style.display = "none";
+    if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
 
     const bgColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-bg-color')
