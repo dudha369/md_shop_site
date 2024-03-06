@@ -152,14 +152,14 @@ window.onload = function () {
 
 function changeMainButton(){
     const countOfItems = Array.from(items.values())
-        .reduce(function (sum, elem) {
-            return sum + elem;
+        .reduce(function (sum, count) {
+            return sum + count;
         }, 0) - (items.get("100VB") === undefined ? 0 : items.get("100VB"));
 
-    const price = Array.from(items.values())
-        .reduce(function (sum, elem) {
-            return sum + PRICES[elem];
-        }, 0);
+    let price = Array.from(items.keys())
+    .reduce(function (sum, item) {
+        return sum + PRICES[item] * items.get(item);
+    }, 0);
     
     if(countOfItems > 0 && !tg.MainButton.isVisible) tg.MainButton.show();
 
