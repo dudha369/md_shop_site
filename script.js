@@ -1,5 +1,4 @@
 const tg = window.Telegram.WebApp;
-let items = new Map();
 const PRICES = {
     // FORTNITE
     "100VB": 16,
@@ -26,6 +25,7 @@ const PRICES = {
     "Spotify_Premium_year": 800,
     // TWITCH SUB
 };
+let items = new Map();
 
 document.addEventListener("DOMContentLoaded", function () {
     const prices = document.getElementsByClassName("price");
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 
         let leftPosition = new Map();
-        leftPosition.set(100, -47);
-        leftPosition.set(80, -3);
-        leftPosition.set(75, -31);
+        leftPosition.set(100, -46);
+        leftPosition.set(80, -2);
+        leftPosition.set(75, -30);
 
         const cross = document.createElement("style");
         cross.innerHTML = `
@@ -133,21 +133,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .substring(1);
 
     document.documentElement.style.setProperty('--tg-theme-button-color-alpha', `rgba(${buttonColor.substring(0, 2)}, ${buttonColor.substring(2, 4)}, ${buttonColor.substring(4, 6)}, 0.2)`);
-
-    function isElementInViewport(el) {
-        var rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
 });
 
 window.onload = function () {
-    tg.expand();
     tg.ready();
+    tg.expand();
 };
 
 function changeMainButton(){
