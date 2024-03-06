@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 
         let leftPosition = new Map();
-        leftPosition.set(100, -46);
-        leftPosition.set(80, 0);
-        leftPosition.set(75, -30);
+        leftPosition.set(100, -48);
+        leftPosition.set(80, -4);
+        leftPosition.set(75, -32);
 
         const cross = document.createElement("style");
         cross.innerHTML = `
