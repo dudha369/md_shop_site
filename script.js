@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const w = (img.offsetWidth - 4.8) / 2; // border 4.8
         const h = (img.offsetHeight - 4.8) / 2; // border 4.8
-        const d = Math.round(Math.sqrt(h * w * 2) * 2) + 4.8; // border 4.8
+        const d = Math.round(Math.sqrt(h * w * 2) * 2) + 2; // border
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
@@ -133,6 +133,16 @@ document.addEventListener("DOMContentLoaded", function () {
         .substring(1);
 
     document.documentElement.style.setProperty('--tg-theme-button-color-alpha', `rgba(${buttonColor.substring(0, 2)}, ${buttonColor.substring(2, 4)}, ${buttonColor.substring(4, 6)}, 0.2)`);
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
 });
 
 window.onload = function () {
@@ -141,7 +151,20 @@ window.onload = function () {
 };
 
 function changeMainButton(){
-    //TODO
+    const countOfItems = Array.from(items.values())
+        .reduce(function (sum, elem) {
+            return sum + elem;
+        }, 0) - items.get("100VB");
+
+    const price = Array.from(items.values())
+        .reduce(function (sum, elem) {
+            return sum + PRICES[elem];
+        }, 0);
+    
+    if(countOfItems > 0 && !tg.MainButton.isVisible) tg.MainButton.show();
+
+    if(countOfItems === 1) tg.MainButton.setText(`Придбати товар на суму ${price}₴`);
+    else tg.MainButton.setText(`Придбати ${countOfItems} товарів на суму ${price}₴`);
 }
 
 
@@ -166,14 +189,7 @@ function buy(item) {
         navigator.vibrate(200);
     } else {}
 
-    const countOfItems = Array.from(items.values())
-        .reduce(function (sum, elem) {
-            return sum + elem;
-        }, 0);
-    tg.MainButton.setText(`Придбати товари(${countOfItems})`);
-    if (!tg.MainButton.isVisible) {
-        tg.MainButton.show();
-    }
+    changeMainButton();
 
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
@@ -209,11 +225,7 @@ function plus(item) {
         navigator.vibrate(200);
     } else {}
     
-    const countOfItems = Array.from(items.values())
-    .reduce(function (sum, elem) {
-        return sum + elem;
-    }, 0);
-    tg.MainButton.setText(`Придбати товари(${countOfItems})`);
+    changeMainButton();
     
     const btn = document.getElementById("btn_" + item);
     const price = document.getElementById(`price_${item}`);
@@ -233,11 +245,7 @@ function minus(item) {
         navigator.vibrate(200);
     } else {}
 
-    const countOfItems = Array.from(items.values())
-        .reduce(function (sum, elem) {
-            return sum + elem;
-        }, 0);
-    tg.MainButton.setText(`Придбати товари(${countOfItems})`);
+    changeMainButton();
 
     const btn = document.getElementById("btn_" + item);
     const btnMinus = document.getElementById("btn_" + item + "-minus");
