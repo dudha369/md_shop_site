@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const w = (img.offsetWidth - 4.8) / 2; // border 4.8
         const h = (img.offsetHeight - 4.8) / 2; // border 4.8
-        const d = Math.round(Math.sqrt(h * w * 2) * 2) + 1; // border
+        const d = Math.round(Math.sqrt(h * w * 2) * 2); // border
 
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 
         let leftPosition = new Map();
-        leftPosition.set(100, -46);
-        leftPosition.set(80, -2);
-        leftPosition.set(75, -30);
+        leftPosition.set(100, -44);
+        leftPosition.set(80, 0);
+        leftPosition.set(75, -28);
 
         const cross = document.createElement("style");
         cross.innerHTML = `
