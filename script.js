@@ -33,6 +33,44 @@ document.addEventListener("DOMContentLoaded", function () {
         item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
     }
 
+    if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
+
+    const bgColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--tg-theme-bg-color')
+        .trim()
+        .substring(1);
+
+    if (bgColor === '') {
+        document.documentElement.style
+            .setProperty('--tg-theme-bg-color', 'black');
+        document.documentElement.style
+            .setProperty('--tg-theme-button-color', 'blue');
+        document.documentElement.style
+            .setProperty('--tg-theme-button-text-color', 'white');
+        document.documentElement.style
+            .setProperty('--tg-theme-link-color', 'lightblue');
+        document.documentElement.style
+            .setProperty('--tg-theme-text-color', 'white');
+    }
+
+    if (1 - (0.299 * parseInt(bgColor.substring(0, 2), 16) + 0.587 * parseInt(bgColor.substring(2, 4), 16) + 0.114 * parseInt(bgColor.substring(4, 6), 16)) / 255 < 0.5) {
+        document.documentElement.style
+            .setProperty('--invert-to-black', '100%');
+    } else {
+        document.documentElement.style
+            .setProperty('--tg-theme-bg-color-alpha', '0');
+    }
+
+    const buttonColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--tg-theme-button-color')
+        .trim()
+        .substring(1);
+
+    document.documentElement.style.setProperty('--tg-theme-button-color-alpha', `rgba(${buttonColor.substring(0, 2)}, ${buttonColor.substring(2, 4)}, ${buttonColor.substring(4, 6)}, 0.2)`);
+
+});
+
+window.onload = function () {
     const disabledItems = document.getElementsByClassName("item disabled");
     for (const item of disabledItems) {
         const btn = document.getElementById("btn_" + item.id);
@@ -99,43 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
         imgWrapper.appendChild(cross);
     }
 
-    if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
-
-    const bgColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--tg-theme-bg-color')
-        .trim()
-        .substring(1);
-
-    if (bgColor === '') {
-        document.documentElement.style
-            .setProperty('--tg-theme-bg-color', 'black');
-        document.documentElement.style
-            .setProperty('--tg-theme-button-color', 'blue');
-        document.documentElement.style
-            .setProperty('--tg-theme-button-text-color', 'white');
-        document.documentElement.style
-            .setProperty('--tg-theme-link-color', 'lightblue');
-        document.documentElement.style
-            .setProperty('--tg-theme-text-color', 'white');
-    }
-
-    if (1 - (0.299 * parseInt(bgColor.substring(0, 2), 16) + 0.587 * parseInt(bgColor.substring(2, 4), 16) + 0.114 * parseInt(bgColor.substring(4, 6), 16)) / 255 < 0.5) {
-        document.documentElement.style
-            .setProperty('--invert-to-black', '100%');
-    } else {
-        document.documentElement.style
-            .setProperty('--tg-theme-bg-color-alpha', '0');
-    }
-
-    const buttonColor = getComputedStyle(document.documentElement)
-        .getPropertyValue('--tg-theme-button-color')
-        .trim()
-        .substring(1);
-
-    document.documentElement.style.setProperty('--tg-theme-button-color-alpha', `rgba(${buttonColor.substring(0, 2)}, ${buttonColor.substring(2, 4)}, ${buttonColor.substring(4, 6)}, 0.2)`);
-});
-
-window.onload = function () {
     tg.ready();
     tg.expand();
 };
