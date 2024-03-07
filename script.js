@@ -71,51 +71,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.onload = function () {
+    tg.ready();
+    tg.expand();
+    
     const disabledItems = document.getElementsByClassName("item disabled");
     for (const item of disabledItems) {
         const btn = document.getElementById("btn_" + item.id);
         btn.setAttribute("disabled", "true");
         btn.innerHTML = "Недоступно";
-
+    
         const price = document.getElementById("price_" + item.id);
         price.style.textDecoration = "line-through";
         
         const imgWrapper = document.getElementById("img_wrapper_" + item.id);
         const img = document.getElementById("img_" + item.id);
-
+    
         const w = (img.offsetWidth - 4.8) / 2; // border 4.8
         const h = (img.offsetHeight - 4.8) / 2; // border 4.8
         const d = Math.round(Math.sqrt(h * w * 2) * 2);
-
+    
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
-
+    
         const closestHeight = (g) => Array(100, 80, 75)
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
-
+    
         let leftPosition = new Map();
         leftPosition.set(100, -44);
         leftPosition.set(80, 0);
         leftPosition.set(75, -28);
-
+    
         const cross = document.createElement("style");
         cross.innerHTML = `
-#img_wrapper_${item.id}, #btn_${item.id} {
+    #img_wrapper_${item.id}, #btn_${item.id} {
     cursor: not-allowed;
-}
-
-#img_${item.id} {
+    }
+    
+    #img_${item.id} {
     border: solid red;
-}
-
-#btn_${item.id} {
+    }
+    
+    #btn_${item.id} {
     background-color: red;
-}
-
-#price_${item.id} {
+    }
+    
+    #price_${item.id} {
     text-decoration: line-throught;
-}
-
-#img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
+    }
+    
+    #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
     content: "";
     position: absolute;
     top: 47.9%;
@@ -123,22 +126,19 @@ window.onload = function () {
     width: ${d}px;
     height: 3px;
     background: red;
-}
-
-#img_wrapper_${item.id}::before {
+    }
+    
+    #img_wrapper_${item.id}::before {
     transform: rotate(${angle}deg);
-}
-
-#img_wrapper_${item.id}::after {
+    }
+    
+    #img_wrapper_${item.id}::after {
     transform: rotate(-${angle}deg);
-}
-`;
-
+    }
+    `;
+    
         imgWrapper.appendChild(cross);
     }
-
-    tg.ready();
-    tg.expand();
 };
 
 function changeMainButton(){
