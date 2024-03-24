@@ -1,28 +1,30 @@
 const tg = window.Telegram.WebApp;
 const PRICES = {
-    // FORTNITE
-    "100VB": 16,
-    "1000VB": 90,
-    "2800VB": 200,
-    "5000VB": 300,
-    "13500VB": 550,
-    "PVE": 190,
-    "Starter_Pack": 70,
-    "Crew": 170,
-    "Battle_Pass": 85,
-    // DISCORD
-    "Nitro_Basic_month": 50,
-    "Nitro_Basic_year": 150,
-    "Nitro_month": 100,
-    "Nitro_year": 600,
-    // TELEGRAM
-    "Telegram_Premium_month": 85,
-    "Telegram_Premium_year": 630,
-    // SPOTIFY
-    "Spotify_Premium_month": 85,
-    "Spotify_Premium_3month": 260,
-    "Spotify_Premium_6month": 500,
-    "Spotify_Premium_year": 800,
+    // FORTNITE 
+    "100VB": 13,
+    "1000VB": 170,
+    "2800VB": 425,
+    "5000VB": 715,
+    "13500VB": 1700,
+    "PVE": 340,
+    "Starter_Pack": 85,
+    "Operation Brite Starter Pack": 70,
+    "Gilded Elites Pack": 325,
+    "Crew": -1,
+    "Battle_Pass": -1,
+    // DISCORD 
+    "Nitro_Basic_month": 70,
+    "Nitro_Basic_year": 700,
+    "Nitro_month": 165,
+    "Nitro_year": 1550,
+    // TELEGRAM 
+    "Telegram_Premium_month": 95,
+    "Telegram_Premium_year": 660,
+    // SPOTIFY 
+    "Spotify_Premium_month": 100,
+    "Spotify_Premium_3month": 265,
+    "Spotify_Premium_6month": 520,
+    "Spotify_Premium_year": 900,
     // TWITCH SUB
 };
 let items = new Map();
@@ -81,6 +83,7 @@ window.onload = function () {
         btn.innerHTML = "Недоступно";
     
         const price = document.getElementById("price_" + item.id);
+        price.innerHTML = "";
         price.style.textDecoration = "line-through";
         
         const imgWrapper = document.getElementById("img_wrapper_" + item.id);

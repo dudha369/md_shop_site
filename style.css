@@ -39,7 +39,7 @@ body {
 }
 
 #inner_fortnite {
-    grid-template-rows: repeat(4, 285px);
+    grid-template-rows: repeat(5, 285px);
 }
 
 #inner_discord {
