@@ -8,8 +8,8 @@ const PRICES = {
     "13500VB": 1700,
     "PVE": 340,
     "Starter_Pack": 85,
-    "Operation Brite Starter Pack": 70,
-    "Gilded Elites Pack": 325,
+    "Operation_Brite_Starter_Pack": 70,
+    "Gilded_Elites_Pack": 325,
     "Crew": -1,
     "Battle_Pass": -1,
     // DISCORD 
