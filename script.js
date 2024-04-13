@@ -10,7 +10,7 @@ const PRICES = {
     "Starter_Pack": 85,
     "Operation_Brite_Starter_Pack": 70,
     "Gilded_Elites_Pack": 325,
-    "Crew": -1,
+    "Crew": 130,
     "Battle_Pass": -1,
     // DISCORD 
     "Nitro_Basic_month": 70,
