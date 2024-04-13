@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
     }
 
-    if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
+    // if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
 
     const bgColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--tg-theme-bg-color')

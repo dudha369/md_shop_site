@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
     color: var(--tg-theme-text-color);
     user-select: none !important;
 }
@@ -26,7 +26,7 @@ body {
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .container {
@@ -108,7 +108,7 @@ body {
 .price {
     padding: 4px;
     color: var(--tg-theme-text-color);
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-size: 14px;
     font-weight: 700;
 }
