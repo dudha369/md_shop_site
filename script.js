@@ -1,7 +1,7 @@
 const tg = window.Telegram.WebApp;
 const PRICES = {
     // FORTNITE 
-    "Gift": 13,
+    "Gift": 18,
     "1000VB": 170,
     "2800VB": 425,
     "5000VB": 715,

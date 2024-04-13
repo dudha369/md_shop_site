@@ -131,7 +131,7 @@
         <p class="category">Spotify</p>
         
         <div class="inner" id="inner_spotify">
-            <div class="item" id="Spotify_Premium_month">
+            <div class="item disabled" id="Spotify_Premium_month">
                 <div class="img_wrapper" id="img_wrapper_Spotify_Premium_month">
                     <img class="img" id="img_Spotify_Premium_month" width="150px" height="210px" src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Premium 1 month">
                     <p class="name">1 місяць</p>
@@ -146,7 +146,7 @@
                 </div>
             </div>
             
-            <div class="item" id="Spotify_Premium_3month">
+            <div class="item disabled" id="Spotify_Premium_3month">
                 <div class="img_wrapper" id="img_wrapper_Spotify_Premium_3month">
                     <img class="img" id="img_Spotify_Premium_3month" width="150px" height="210px" src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Premium 3 month">
                     <p class="name">3 місяця</p>
@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <div class="item" id="Spotify_Premium_year">
+            <div class="item disabled" id="Spotify_Premium_year">
                 <div class="img_wrapper" id="img_wrapper_Spotify_Premium_6month">
                     <img class="img" id="img_Spotify_Premium_6month" width="150px" height="210px" src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Premium 6 month">
                     <p class="name">6 місяців</p>
@@ -176,7 +176,7 @@
                 </div>
             </div>
 
-            <div class="item" id="Spotify_Premium_year">
+            <div class="item disabled" id="Spotify_Premium_year">
                 <div class="img_wrapper" id="img_wrapper_Spotify_Premium_year">
                     <img class="img" id="img_Spotify_Premium_year" width="150px" height="210px" src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Premium 1 year">
                     <p class="name">1 рік</p>
@@ -199,9 +199,9 @@
                 <img class="img fe" id="img_Gift" src="images/Fortnite/Gift.webp" alt="Gift" title="Gift">
                 <p class="name">Подарунок</p>
             </div>
-
+            
             <p class="price" id="price_Gift"></p>
-                
+            
             <div class="buttons" style="width: 190px;">
                 <div class="buttons_big">    
                     <button onclick="minus('Gift')" id="btn_Gift-minus" class="btn-minus">-</button>
@@ -215,8 +215,38 @@
 
         <br>
         
+        <div class="item" id="Crew">
+            <div class="img_wrapper" id="img_wrapper_Crew">
+                <img class="img sq" id="img_Crew" src="images/Fortnite/Crew.webp" alt="Crew" title="Crew">
+                <p class="name">Crew</p>
+            </div>
+        
+            <p class="price" id="price_Crew"></p>
+        
+            <div class="buttons">
+                <button onclick="minus('Crew')" id="btn_Crew-minus" class="btn-minus">-</button>
+                <button onclick="buy('Crew')" id="btn_Crew" class="btn">Придбати</button>
+                <button onclick="plus('Crew')" id="btn_Crew-plus" class="btn-plus">+</button>
+            </div>
+        </div>
+        
+        <div class="item disabled" id="Battle_Pass">
+            <div class="img_wrapper" id="img_wrapper_Battle_Pass">
+                <img class="img sq" id="img_Battle_Pass" src="images/Fortnite/Battle Pass.webp" alt="Battle Pass" title="Battle Pass">
+                <p class="name">Battle Pass</p>
+            </div>
+
+            <p class="price" id="price_Battle_Pass"></p>
+
+            <div class="buttons">
+                <button onclick="minus('Battle_Pass')" id="btn_Battle_Pass-minus" class="btn-minus">-</button>
+                <button onclick="buy('Battle_Pass')" id="btn_Battle_Pass" class="btn">Придбати</button>
+                <button onclick="plus('Battle_Pass')" id="btn_Battle_Pass-plus" class="btn-plus">+</button>
+            </div>
+        </div>
+        
         <div class="inner" id="inner_fortnite">
-            <div class="item" id="1000VB">
+            <div class="item disabled" id="1000VB">
                 <div class="img_wrapper" id="img_wrapper_1000VB">
                     <img class="img tf" id="img_1000VB" src="images/Fortnite/1000VB.webp" alt="1000VB" title="1000VB">
                     <p class="name">1000VB</p>
@@ -231,7 +261,7 @@
                 </div>
             </div>
 
-            <div class="item" id="2800VB">
+            <div class="item disabled" id="2800VB">
                 <div class="img_wrapper" id="img_wrapper_2800VB">
                     <img class="img tf" id="img_2800VB" src="images/Fortnite/2800VB.webp" alt="2800VB" title="2800VB">
                     <p class="name">2800VB</p>
@@ -246,7 +276,7 @@
                 </div>
             </div>
 
-            <div class="item" id="5000VB">
+            <div class="item disabled" id="5000VB">
                 <div class="img_wrapper" id="img_wrapper_5000VB">
                     <img class="img tf" id="img_5000VB" src="images/Fortnite/5000VB.webp" alt="5000VB" title="5000VB">
                     <p class="name">5000VB</p>
@@ -261,7 +291,7 @@
                 </div>
             </div>
 
-            <div class="item" id="13500VB">
+            <div class="item disabled" id="13500VB">
                 <div class="img_wrapper" id="img_wrapper_13500VB">
                     <img class="img tf" id="img_13500VB" src="images/Fortnite/13500VB.webp" alt="13500VB" title="13500VB">
                     <p class="name">13500VB</p>
@@ -276,7 +306,7 @@
                 </div>
             </div>
 
-            <div class="item" id="PVE">
+            <div class="item disabled" id="PVE">
                 <div class="img_wrapper" id="img_wrapper_PVE">
                     <img class="img tf" id="img_PVE" src="images/Fortnite/PVE.webp" alt="PVE" title="PVE">
                     <p class="name">PVE</p>
@@ -291,7 +321,7 @@
                 </div>
             </div>
             
-            <div class="item" id="Starter_Pack">
+            <div class="item disabled" id="Starter_Pack">
                 <div class="img_wrapper" id="img_wrapper_Starter_Pack">
                     <img class="img tf" id="img_Starter_Pack" width="150px" height="200px" src="images/Fortnite/Starter Pack.webp" alt="Starter Pack" title="Starter Pack">
                     <p class="name">Starter Pack</p>
@@ -306,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="item" id="Operation_Brite_Starter_Pack">
+            <div class="item disabled" id="Operation_Brite_Starter_Pack">
                 <div class="img_wrapper" id="img_wrapper_Operation_Brite_Starter_Pack">
                     <img class="img tf" id="img_Operation_Brite_Starter_Pack" src="images/Fortnite/Operation Brite Starter Pack.webp" alt="Operation Brite Starter Pack" title="Operation Brite Starter Pack">
                     <p class="name">Operation Brite</p>
@@ -321,7 +351,7 @@
                 </div>
             </div>
             
-            <div class="item" id="Gilded_Elites_Pack">
+            <div class="item disabled" id="Gilded_Elites_Pack">
                 <div class="img_wrapper" id="img_wrapper_Gilded_Elites_Pack">
                     <img class="img tf" id="img_Gilded_Elites_Pack" width="150px" height="200px" src="images/Fortnite/Gilded Elites Pack.webp" alt="Gilded Elites Pack" title="Gilded Elites Pack">
                     <p class="name">Gilded Elites</p>
@@ -333,36 +363,6 @@
                     <button onclick="minus('Gilded_Elites_Pack')" id="btn_Gilded_Elites_Pack-minus" class="btn-minus">-</button>
                     <button onclick="buy('Gilded_Elites_Pack')" id="btn_Gilded_Elites_Pack" class="btn">Придбати</button>
                     <button onclick="plus('Gilded_Elites_Pack')" id="btn_Gilded_Elites_Pack-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            
-            <div class="item disabled" id="Crew">
-                <div class="img_wrapper" id="img_wrapper_Crew">
-                    <img class="img sq" id="img_Crew" src="images/Fortnite/Crew.webp" alt="Crew" title="Crew">
-                    <p class="name">Crew</p>
-                </div>
-            
-                <p class="price" id="price_Crew"></p>
-            
-                <div class="buttons">
-                    <button onclick="minus('Crew')" id="btn_Crew-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Crew')" id="btn_Crew" class="btn">Придбати</button>
-                    <button onclick="plus('Crew')" id="btn_Crew-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            
-            <div class="item disabled" id="Battle_Pass">
-                <div class="img_wrapper" id="img_wrapper_Battle_Pass">
-                    <img class="img sq" id="img_Battle_Pass" src="images/Fortnite/Battle Pass.webp" alt="Battle Pass" title="Battle Pass">
-                    <p class="name">Battle Pass</p>
-                </div>
-
-                <p class="price" id="price_Battle_Pass"></p>
-
-                <div class="buttons">
-                    <button onclick="minus('Battle_Pass')" id="btn_Battle_Pass-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Battle_Pass')" id="btn_Battle_Pass" class="btn">Придбати</button>
-                    <button onclick="plus('Battle_Pass')" id="btn_Battle_Pass-plus" class="btn-plus">+</button>
                 </div>
             </div>
         </div>
