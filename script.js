@@ -94,33 +94,34 @@ window.onload = function () {
     
         const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
     
-        const closestHeight = (g) => Array(100, 80, 75)
+        const closestHeight = (g) => Array(105, 100, 80, 75)
             .reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
     
         let leftPosition = new Map();
+        leftPosition.set(105, -48);
         leftPosition.set(100, -44);
         leftPosition.set(80, 0);
         leftPosition.set(75, -28);
     
         const cross = document.createElement("style");
         cross.innerHTML = `
-    #img_wrapper_${item.id}, #btn_${item.id} {
+#img_wrapper_${item.id}, #btn_${item.id} {
     cursor: not-allowed;
-    }
+}
     
-    #img_${item.id} {
+#img_${item.id} {
     border: solid red;
-    }
+}
     
-    #btn_${item.id} {
+#btn_${item.id} {
     background-color: red;
-    }
+}
     
-    #price_${item.id} {
+#price_${item.id} {
     text-decoration: line-throught;
-    }
+}
     
-    #img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
+#img_wrapper_${item.id}::before, #img_wrapper_${item.id}::after {
     content: "";
     position: absolute;
     top: 47.9%;
@@ -128,16 +129,16 @@ window.onload = function () {
     width: ${d}px;
     height: 3px;
     background: red;
-    }
+}
     
-    #img_wrapper_${item.id}::before {
+#img_wrapper_${item.id}::before {
     transform: rotate(${angle}deg);
-    }
+}
     
-    #img_wrapper_${item.id}::after {
+#img_wrapper_${item.id}::after {
     transform: rotate(-${angle}deg);
-    }
-    `;
+}
+`;
     
         imgWrapper.appendChild(cross);
     }
