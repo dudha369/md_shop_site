@@ -41,15 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (bgColor === '') {
         document.documentElement.style
-            .setProperty('--tg-theme-bg-color', 'black');
+            .setProperty('--tg-theme-bg-color', '#17212b');
         document.documentElement.style
-            .setProperty('--tg-theme-button-color', 'blue');
+            .setProperty('--tg-theme-button-color', '#5288c1');
         document.documentElement.style
             .setProperty('--tg-theme-button-text-color', 'white');
         document.documentElement.style
             .setProperty('--tg-theme-link-color', 'lightblue');
         document.documentElement.style
-            .setProperty('--tg-theme-text-color', 'white');
+            .setProperty('--tg-theme-text-color', '#f5f5f5');
     }
 
     if (1 - (0.299 * parseInt(bgColor.substring(0, 2), 16) + 0.587 * parseInt(bgColor.substring(2, 4), 16) + 0.114 * parseInt(bgColor.substring(4, 6), 16)) / 255 < 0.5) {
