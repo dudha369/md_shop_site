@@ -1,17 +1,14 @@
 const tg = window.Telegram.WebApp;
 const PRICES = {
     // FORTNITE 
-    "Gift": 18,
+    "100VB": 8,
+    "Crew": 130,
     "1000VB": 170,
     "2800VB": 425,
     "5000VB": 715,
     "13500VB": 1700,
     "PVE": 340,
     "Starter_Pack": 85,
-    "Operation_Brite_Starter_Pack": 70,
-    "Gilded_Elites_Pack": 325,
-    "Crew": 130,
-    "Battle_Pass": -1,
     // DISCORD 
     "Nitro_Basic_month": 70,
     "Nitro_Basic_year": 700,
@@ -146,10 +143,10 @@ window.onload = function () {
 
 function gift_info() {
     try {
-        tg.showAlert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop gifts3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');
+        tg.showAlert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop 100VBs3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');
     }
     catch {
-        alert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop gifts3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');
+        alert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop 100VBs3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');
     }
 }
 
@@ -157,7 +154,7 @@ function changeMainButton() {
     const countOfItems = Array.from(items.values())
         .reduce(function (sum, count) {
             return sum + count;
-        }, 0) - (items.get("Gift") === undefined ? 0 : items.get("Gift") - 1);
+        }, 0) - (items.get("100VB") === undefined ? 0 : items.get("100VB") - 1);
 
     if(countOfItems > 0){
         const price = Array.from(items.keys())
@@ -212,7 +209,7 @@ function buy(item) {
     }
     btn.classList.add("active");
     btn.setAttribute("disabled", "true");
-    btn.innerHTML = item === "Gift" ? `${items.get(item) * 100}<img class="VB" src="images/Fortnite/vbucks.webp" alt="VB" title="VB">` : items.get(item);
+    btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img class="VB" src="images/Fortnite/vbucks.webp" alt="VB" title="VB">` : items.get(item);
     price.innerHTML = `${PRICES[item]}₴`;
 
     btnMinus.style.display = "block";
@@ -237,7 +234,7 @@ function plus(item) {
     const btn = document.getElementById("btn_" + item);
     const price = document.getElementById(`price_${item}`);
 
-    btn.innerHTML = item === "Gift" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
     price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
 }
 
@@ -259,7 +256,7 @@ function minus(item) {
     const btnPlus = document.getElementById("btn_" + item + "-plus");
     const price = document.getElementById(`price_${item}`);
 
-    btn.innerHTML = item === "Gift" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
+    btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
     price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
 
     if (items.get(item) === 0) {
