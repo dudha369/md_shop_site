@@ -72,6 +72,7 @@ body {
 .sq {
     width: 150px !important;
     height: 150px !important;
+    border-radius: 15% !important;
 }
 
 .tf {
