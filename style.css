@@ -206,7 +206,7 @@ body {
 .btn.passive {
     content: "";
     transition: all .8s;
-    width: 130px;
+    width: 150px;
     background-color: var(--tg-theme-button-color);
 }
 
