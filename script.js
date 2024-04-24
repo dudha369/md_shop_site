@@ -41,11 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (bgColor === '') {
         document.documentElement.style
-            .setProperty('--tg-theme-bg-color', '#17212b');
+            .setProperty('--tg-theme-bg-color', '#000000');
         document.documentElement.style
-            .setProperty('--tg-theme-button-color', '#5288c1');
+            .setProperty('--tg-theme-button-color', '#3F88F7');
         document.documentElement.style
-            .setProperty('--tg-theme-button-text-color', 'white');
+            .setProperty('--tg-theme-button-text-color', '#c7f5fd');
         document.documentElement.style
             .setProperty('--tg-theme-link-color', 'lightblue');
         document.documentElement.style
