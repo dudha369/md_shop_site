@@ -96,7 +96,6 @@ body {
 }
 
 .name {
-    font-family: "Roboto", sans-serif;
     position: absolute;
     bottom: 5px;
     color: var(--tg-theme-text-color);
