@@ -1,4 +1,4 @@
-import PRICES from './prices.json' assert { type: 'JSON' };
+import PRICES from './prices.json' with { type: 'JSON' };
 const tg = window.Telegram.WebApp;
 
 let items = new Map();

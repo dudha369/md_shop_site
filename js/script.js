@@ -1,4 +1,4 @@
-import PRICES from './prices.json' assert { type: 'JSON' };
+import PRICES from './prices.json' with { type: 'JSON' };
 document.addEventListener("DOMContentLoaded", function () {
 	const prices = document.getElementsByClassName("price");
 	for (const item of prices) {
