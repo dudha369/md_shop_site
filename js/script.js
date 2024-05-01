@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.documentElement.style
 			.setProperty('--tg-theme-bg-color', '#000000');
 		document.documentElement.style
-			.setProperty('--tg-theme-button-color', '#3F88F7');
+			.setProperty('--tg-theme-button-color', '#3388ff');
 		document.documentElement.style
-			.setProperty('--tg-theme-button-text-color', '#c7f5fd');
+			.setProperty('--tg-theme-button-text-color', '#ffffff');
 		document.documentElement.style
 			.setProperty('--tg-theme-link-color', 'lightblue');
 		document.documentElement.style
