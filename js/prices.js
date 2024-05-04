@@ -1,4 +1,4 @@
-const PRICES= {
+const PRICES = {
     // FORTNITE //
     "100VB": 8,
     "1000VB": 170,
