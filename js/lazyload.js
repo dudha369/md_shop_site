@@ -11,17 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
 					img.classList.remove("lazy");
 					imageObserver.unobserve(img);
 					
-					const imageWrapper = img.parentNode;
+					let imageWrapper = img.parentNode;
 					
 					if (imageWrapper.parentNode.classList.contains("disabled")) {
+						let item_name = img.id.slice(4);
 						
-						const w = (img.offsetWidth - 4.8) / 2; // border 4.8
-						const h = (img.offsetHeight - 4.8) / 2; // border 4.8
-						const d = Math.round(Math.sqrt(h * w * 2) * 2);
+						let w = (img.offsetWidth - 4.8) / 2; // border 4.8
+						let h = (img.offsetHeight - 4.8) / 2; // border 4.8
+						let d = Math.round(Math.sqrt(h * w * 2) * 2);
 						
-						const angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
+						let angle = Math.round(Math.atan(h / w) * (180 / Math.PI));
 						
-						const closestHeight = (g) => Array(105, 100, 80, 75)
+						let closestHeight = (g) => Array(105, 100, 80, 75)
 							.reduce((p, c) => Math.abs(c - g) < Math.abs(p - g) ? c : p);
 						
 						let leftPosition = new Map();
@@ -30,25 +31,25 @@ document.addEventListener("DOMContentLoaded", function () {
 						leftPosition.set(80, 0);
 						leftPosition.set(75, -28);
 						
-						const cross = document.createElement("style");
+						let cross = document.createElement("style");
 						cross.innerHTML = `
-#img_wrapper_${img.id.slice(4)}, #btn_${img.id.slice(4)} {
+#img_wrapper_${item_name}, #btn_${item_name} {
     cursor: not-allowed;
 }
     
-#img_${img.id.slice(4)} {
+#img_${item_name} {
     border: solid red;
 }
     
-#btn_${img.id.slice(4)} {
+#btn_${item_name} {
     background-color: red;
 }
     
-#price_${img.id.slice(4)} {
+#price_${item_name} {
     text-decoration: line-throught;
 }
     
-#img_wrapper_${img.id.slice(4)}::before, #img_wrapper_${img.id.slice(4)}::after {
+#img_wrapper_${item_name}::before, #img_wrapper_${item_name}::after {
     content: "";
     position: absolute;
     top: 47.9%;
@@ -58,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
     background: red;
 }
     
-#img_wrapper_${img.id.slice(4)}::before {
+#img_wrapper_${item_name}::before {
     transform: rotate(${angle}deg);
 }
     
-#img_wrapper_${img.id.slice(4)}::after {
+#img_wrapper_${item_name}::after {
     transform: rotate(-${angle}deg);
 }
 `;

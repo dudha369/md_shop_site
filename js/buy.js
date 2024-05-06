@@ -2,13 +2,13 @@ const tg = window.Telegram.WebApp;
 let items = new Map();
 
 function changeMainButton() {
-	const countOfItems = Array.from(items.values())
+	let countOfItems = Array.from(items.values())
 		.reduce(function (sum, count) {
 			return sum + count;
 		}, 0) - ((items.get("100VB") === undefined || items.get("100VB") === 0) ? 0 : items.get("100VB") - 1); // 100VBs - one item
 	
 	if (countOfItems > 0) {
-		const price = Array.from(items.keys())
+		let price = Array.from(items.keys())
 			.reduce(function (sum, item) {
 				return sum + PRICES[item] * items.get(item);
 			}, 0);
@@ -24,8 +24,8 @@ function changeMainButton() {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
 	let res = new Array();
-	const re = /_/g;
-	for (const [key, value] of items) {
+	let re = /_/g;
+	for (let [key, value] of items) {
 		if (value === 0) {
 			continue;
 		}
@@ -45,11 +45,11 @@ function buy(item) {
 	
 	changeMainButton();
 	
-	const btn = document.getElementById("btn_" + item);
-	const btnMinus = document.getElementById("btn_" + item + "-minus");
-	const btnPlus = document.getElementById("btn_" + item + "-plus");
-	const img = document.getElementById("img_" + item);
-	const price = document.getElementById(`price_${item}`);
+	let btn = document.getElementById("btn_" + item);
+	let btnMinus = document.getElementById("btn_" + item + "-minus");
+	let btnPlus = document.getElementById("btn_" + item + "-plus");
+	let img = document.getElementById("img_" + item);
+	let price = document.getElementById(`price_${item}`);
 	
 	if (btn.classList.contains("passive")) {
 		btn.classList.remove("passive");
@@ -81,8 +81,8 @@ function plus(item) {
 	
 	changeMainButton();
 	
-	const btn = document.getElementById("btn_" + item);
-	const price = document.getElementById(`price_${item}`);
+	let btn = document.getElementById("btn_" + item);
+	let price = document.getElementById(`price_${item}`);
 	
 	btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
 	price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
@@ -101,10 +101,10 @@ function minus(item) {
 	
 	changeMainButton();
 	
-	const btn = document.getElementById("btn_" + item);
-	const btnMinus = document.getElementById("btn_" + item + "-minus");
-	const btnPlus = document.getElementById("btn_" + item + "-plus");
-	const price = document.getElementById(`price_${item}`);
+	let btn = document.getElementById("btn_" + item);
+	let btnMinus = document.getElementById("btn_" + item + "-minus");
+	let btnPlus = document.getElementById("btn_" + item + "-plus");
+	let price = document.getElementById(`price_${item}`);
 	
 	btn.innerHTML = item === "100VB" ? `${items.get(item) * 100}<img style= "border-radius: 50%;vertical-align: middle;" width="25px" height="25px" src="images/Fortnite/vbucks.webp" alt="VB">` : items.get(item);
 	price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
@@ -118,7 +118,7 @@ function minus(item) {
 		btnMinus.innerHTML = "";
 		btnPlus.innerHTML = "";
 		
-		const img = document.getElementById("img_" + item);
+		let img = document.getElementById("img_" + item);
 		
 		btn.classList.remove("active");
 		btn.classList.add("passive");

@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-	const prices = document.getElementsByClassName("price");
-	for (const item of prices) {
+	let prices = document.getElementsByClassName("price");
+	for (let item of prices) {
 		item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
 	}
 	
 	// if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
 	
-	const bgColor = getComputedStyle(document.documentElement)
+	let bgColor = getComputedStyle(document.documentElement)
 		.getPropertyValue('--tg-theme-bg-color')
 		.trim();
 	
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			.setProperty('--tg-theme-bg-color-alpha', '0');
 	}
 	
-	const buttonColor = getComputedStyle(document.documentElement)
+	let buttonColor = getComputedStyle(document.documentElement)
 		.getPropertyValue('--tg-theme-button-color')
 		.trim()
 		.substring(1);
@@ -52,13 +52,13 @@ window.onload = function () {
 	tg.ready();
 	tg.expand();
 	
-	const disabledItems = document.getElementsByClassName("item disabled");
-	for (const item of disabledItems) {
-		const btn = document.getElementById("btn_" + item.id);
+	let disabledItems = document.getElementsByClassName("item disabled");
+	for (let item of disabledItems) {
+		let btn = document.getElementById("btn_" + item.id);
 		btn.setAttribute("disabled", "true");
 		btn.innerHTML = "Недоступно";
 		
-		const price = document.getElementById("price_" + item.id);
+		let price = document.getElementById("price_" + item.id);
 		price.style.display = "none";
 	}
 };
