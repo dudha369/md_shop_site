@@ -1,8 +1,6 @@
 const tg = window.Telegram.WebApp;
 let items = new Map();
 
-console.log(tg.initDataUnsafe.user.language_code);
-
 function changeMainButton() {
 	let countOfItems = Array.from(items.values())
 		.reduce(function (sum, count) {
