@@ -98,7 +98,7 @@ function minus(item) {
 	}
 	localStorage.setItem('cart', JSON.stringify(Array.from(items.entries())));
 	
-	if (navigator.vibrate && !cart) {
+	if (navigator.vibrate) {
 		navigator.vibrate(200);
 	}
 
