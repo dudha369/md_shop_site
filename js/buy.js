@@ -1,6 +1,8 @@
 const tg = window.Telegram.WebApp;
 let items = new Map();
 
+// console.log(tg.initDataUnsafe.user.language_code);
+
 function changeMainButton() {
 	let countOfItems = Array.from(items.values())
 		.reduce(function (sum, count) {
@@ -36,12 +38,13 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 	tg.close();
 });
 
-function buy(item) {
+function buy(item, cart=false) {
 	items.set(item, 1);
+	localStorage.setItem('cart', JSON.stringify(Array.from(items.entries())));
 	
-	if (navigator.vibrate) {
+	if (navigator.vibrate && !cart) {
 		navigator.vibrate(200);
-	} else {}
+	}
 	
 	changeMainButton();
 	
@@ -72,13 +75,14 @@ function buy(item) {
 	btnPlus.innerHTML = "+";
 }
 
-function plus(item) {
+function plus(item, cart=false) {
 	items.set(item, items.get(item) + 1);
+	localStorage.setItem('cart', JSON.stringify(Array.from(items.entries())));
 	
-	if (navigator.vibrate) {
+	if (navigator.vibrate && !cart) {
 		navigator.vibrate(200);
-	} else {}
-	
+	}
+
 	changeMainButton();
 	
 	let btn = document.getElementById("btn_" + item);
@@ -94,11 +98,12 @@ function minus(item) {
 	} else {
 		items.set(item, items.get(item) - 1);
 	}
+	localStorage.setItem('cart', JSON.stringify(Array.from(items.entries())));
 	
-	if (navigator.vibrate) {
+	if (navigator.vibrate && !cart) {
 		navigator.vibrate(200);
-	} else {}
-	
+	}
+
 	changeMainButton();
 	
 	let btn = document.getElementById("btn_" + item);

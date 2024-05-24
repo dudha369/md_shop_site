@@ -21,12 +21,7 @@
 		<meta name="theme-color" content="#000000">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body>
-		<!-- SNOW -->
-		<!-- <canvas class="snow"></canvas>
-			<script type="text/javascript" src="js/snow.js"></script>
-			<link rel="stylesheet" href="css/snow_button.css"> -->
-            
+	<body>            
 		<!-- <img class="tent" src="images/additional/tent.webp" alt="tant"> -->
 
 		<div class="container">
@@ -182,7 +177,7 @@
 					<button onclick="minus('100VB')" id="btn_100VB-minus" class="btn-minus">-</button>
 					<button onclick="buy('100VB')" id="btn_100VB" class="btn big">Придбати</button>
 					<button onclick="plus('100VB')" id="btn_100VB-plus" class="btn-plus">+</button>
-					<button onclick="gift_info()" class="btn_info" id="btn_info_100VB">i</button>
+					<button onclick="try{tg.showAlert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop gifts3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');}catch{alert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop gifts3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');}" class="btn_info" id="btn_info_100VB">i</button>
 				</div>
 				<p class="price" id="price_100VB"></p>
 			</div>
@@ -285,10 +280,15 @@
 			<a href="https://www.tiktok.com/@mdshop_offical" target="_blank"><img class="lazy" src="images/additional/TikTok.webp" data-src="images/additional/TikTok.webp" alt="TikTok" title="🎶Не забувайте підписуватись на нас в TikTok"></a>
 			<a href="https://send.monobank.ua/jar/9GgRHHpeey" target="_blank"><img class="lazy" src="images/additional/money.webp" data-src="images/additional/money.webp" alt="coin" title="💰Підтримати магазин"></a>
 		</div>
-		<script src="js/script.js"></script>
+		<script src="js/onload.js"></script>
 		<script src="js/lazyload.js"></script>
 		<script src="js/prices.js"></script>
 		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<script src="js/buy.js"></script>
+
+		<!-- SNOW -->
+		<!-- <canvas class="snow"></canvas>
+			<script type="text/javascript" src="js/snow.js"></script>
+			<link rel="stylesheet" href="css/snow_button.css"> -->
 	</body>
 </html>

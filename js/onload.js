@@ -40,14 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	
 });
 
-function gift_info() {
-	try {
-		tg.showAlert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop gifts3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');
-	} catch {
-		alert('Щоб отримати подарунок, необхідно додати нашого продавця „MD Shop gifts3“ у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок');
-	}
-}
-
 window.onload = function () {
 	tg.ready();
 	tg.expand();
@@ -61,4 +53,20 @@ window.onload = function () {
 		let price = document.getElementById("price_" + item.id);
 		price.style.display = "none";
 	}
+
+	if (localStorage.getItem('cart') !== null) {
+        let cart = new Map(JSON.parse(localStorage.getItem('cart')));
+
+        for(let [key, value] of cart) {
+			// console.log(key, value);
+            if (value === 0) {
+                continue;
+            }
+
+            buy(key, cart=true);
+            for(let i = 1; i < value; i++){
+                plus(key, cart=true);
+            }
+        }
+    };
 };
