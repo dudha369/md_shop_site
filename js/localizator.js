@@ -28,6 +28,16 @@ const text = {
         "uk": "Придбати",
         "en": "Buy"
     },
+    "offer_sum": {
+        "ru": "товар на сумму",
+        "uk": "товар на суму",
+        "en": "goods in the amount of"
+    },
+    "offers_sum": {
+        "ru": "товаров на сумму",
+        "uk": "товарів на суму",
+        "en": "goods for the amount of"
+    },
     "gift_info": {
         "ru": "Чтобы получить подарок, необходимо добавить нашего продавца «MD Shop gifts3» в друзья и подождать минимум двое суток. Это требование Epic Games, без соблюдения которого мы, к сожалению, не сможем отправить Вам подарок",
         "uk": "Щоб отримати подарунок, необхідно додати нашого продавця «MD Shop gifts3» у друзі та почекати мінімум дві доби. Це вимога Epic Games, без дотримання якої ми, на жаль, не зможемо надіслати Вам подарунок",
@@ -62,17 +72,5 @@ const text = {
         "ru": "Подарок",
         "uk": "Подарунок",
         "en": "Gift",
-    }
-}
-
-function get_gift_info() {
-    const urlParams = new URLSearchParams(window.location.search);
-	let lang = urlParams.get('lang');
-	lang = lang ? lang : "uk";
-
-    try {
-        tg.showAlert(text["gift_info"][lang]);
-    } catch {
-        alert(text["gift_info"][lang]);
     }
 }

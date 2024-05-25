@@ -1,12 +1,12 @@
+const urlParams = new URLSearchParams(window.location.search);
+let lang = urlParams.get('lang', "uk");
+lang = lang ? lang : "uk";
+
 document.addEventListener("DOMContentLoaded", function () {
 	let prices = document.getElementsByClassName("price");
 	for (let item of prices) {
 		item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
 	}
-
-	const urlParams = new URLSearchParams(window.location.search);
-	let lang = urlParams.get('lang', "uk");
-	lang = lang ? lang : "uk";
 
 	let names = document.getElementsByClassName("name");
 	for (let n of names) {

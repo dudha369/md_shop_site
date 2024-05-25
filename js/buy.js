@@ -12,8 +12,8 @@ function changeMainButton() {
 			.reduce(function (sum, item) {
 				return sum + PRICES[item] * items.get(item);
 			}, 0);
-		if (countOfItems === 1) tg.MainButton.setText(`Придбати товар на суму ${price}₴`);
-		else tg.MainButton.setText(`Придбати ${countOfItems} товарів на суму ${price}₴`);
+		if (countOfItems === 1) tg.MainButton.setText(`${text["buy"][lang]} ${text["offer_sum"][lang]} ${price}₴`);
+		else tg.MainButton.setText(`${text["buy"][lang]} ${countOfItems} ${text["offers_sum"][lang]} ${price}₴`);
 		
 		if (!tg.MainButton.isVisible) tg.MainButton.show();
 	} else {
@@ -113,7 +113,7 @@ function minus(item) {
 	price.innerHTML = `${items.get(item) * PRICES[item]}₴`;
 	
 	if (items.get(item) === 0) {
-		btn.innerHTML = "Придбати";
+		btn.innerHTML = text["buy"][lang];
 		
 		btnMinus.setAttribute("disabled", "true");
 		btnPlus.setAttribute("disabled", "true");
