@@ -3,6 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	for (let item of prices) {
 		item.innerHTML = `${PRICES[item.id.slice(6)]}₴`;
 	}
+
+	const urlParams = new URLSearchParams(window.location.search);
+	let lang = urlParams.get('lang', "uk");
+	lang = lang ? lang : "uk";
+
+	let names = document.getElementsByClassName("name");
+	for (let n of names) {
+		let item = n.parentNode.id.split("_").slice(-1)[0];
+		let name = text[item];
+		
+		n.innerHTML = name ? name[lang] : name;
+	}
+
+	let btns = document.getElementsByClassName("btn");
+	for (let btn of btns) {
+		btn.innerHTML = text["buy"][lang];
+	}
 	
 	// if(window.innerWidth>1400) document.querySelector(".tent").style.display = "none";
 	
@@ -58,7 +75,6 @@ window.onload = function () {
         let cart = new Map(JSON.parse(localStorage.getItem('cart')));
 
         for(let [key, value] of cart) {
-			// console.log(key, value);
             if (value === 0) {
                 continue;
             }
