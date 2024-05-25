@@ -74,3 +74,5 @@ const text = {
         "en": "Gift",
     }
 }
+
+var get_gift_info = () => {try{tg.showAlert(text["gift_info"][lang]);}catch{alert(text["gift_info"][lang]);}};
