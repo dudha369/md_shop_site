@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			.setProperty('--invert-to-black', '100%');
 	} else {
 		document.documentElement.style
-			.setProperty('--tg-theme-bg-color-alpha', '0');
+			.setProperty('--invert-to-black', '0%');
 	}
 	
 	let buttonColor = getComputedStyle(document.documentElement)
