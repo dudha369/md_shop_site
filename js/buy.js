@@ -32,8 +32,6 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 		res.push(`${key.replace(re, " ")} x ${value}`);
 	}
 
-	// items.clear();
-	// localStorage.setItem('cart', JSON.stringify(Array.from(items.entries())));
 	localStorage.setItem('cart', null);
 
 	tg.sendData(res.sort()
