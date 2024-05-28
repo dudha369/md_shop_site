@@ -5,7 +5,7 @@ function changeMainButton() {
 	let countOfItems = Array.from(items.values())
 		.reduce(function (sum, count) {
 			return sum + count;
-		}, 0) - ((items.get("100VB") === undefined || items.get("100VB") === 0) ? 0 : items.get("100VB") - 1); // 100VBs - one item
+		}, 0) - ((items.get("100VB") === undefined || items.get("100VB") === 0) ? 0 : items.get("100VB") - 1); // 100VBs - one item (gift)
 	
 	if (countOfItems > 0) {
 		let price = Array.from(items.keys())

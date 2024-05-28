@@ -75,4 +75,4 @@ const text = {
     }
 }
 
-var get_gift_info = () => {try{tg.showAlert(text["gift_info"][lang]);}catch{alert(text["gift_info"][lang]);}};
+let get_gift_info = () => {tg.showAlert(text["gift_info"][lang])};
