@@ -31,6 +31,9 @@ Telegram.WebApp.onEvent("mainButtonClicked", function () {
 		}
 		res.push(`${key.replace(re, " ")} x ${value}`);
 	}
+
+	items.clear();
+
 	tg.sendData(res.sort()
 		.join(";"));
 	tg.close();
