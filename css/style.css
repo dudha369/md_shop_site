@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: -apple-system, Roboto, 'Helvetica Neue', 'Open Sans', sans-serif;
+    font-family: -apple-system, Roboto, 'Open Sans', sans-serif;
     color: var(--tg-theme-text-color);
     user-select: none !important;
 }
