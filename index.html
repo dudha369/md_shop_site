@@ -1,177 +1,294 @@
 <!DOCTYPE html>
 <html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/MD Shop.png" type="image/png">
-    <link rel="shortcut icon" href="images/MD Shop.png" type="image/png">
-    <title>🏬MD Shop🛍️</title>
-</head>
-<body>
-    <h2 class="category">Discord</h2>
-    <div class="container">
-        <div class="inner" id="inner_discord">
-            <div class="item">
-                <div class="img_wrapper">
-                    <img class="img" width="150px" height="200px" src="images/Discord/Nitro.png" alt="Nitro">
-                    <p class="name">1 місяць</p>
-                </div>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="public, max-age=2592000" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta name="description" content="Вітаємо тебе у MD Shop!🌟 Ми раді бачити тебе в нашому затишному куточку онлайн-шопінгу. Тут ти знайдеш найкращі товари за вигідними цінами та першокласне обслуговування.">
+		<title>MD Shop</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+		<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+		<link rel="manifest" href="favicon/site.webmanifest">
+		<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="favicon/favicon.ico">
+		<meta name="msapplication-TileColor" content="#2b5797">
+		<meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+		<meta name="msapplication-config" content="favicon/browserconfig.xml">
+		<meta name="theme-color" content="#000000">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>            
+		<!-- <img class="tent" src="images/additional/tent.webp" alt="tant"> -->
 
-                <p class="price">50UAH</p>
+		<div class="container">
+			<p class="category">Discord</p>
+			<div class="inner" id="inner_discord">
+				<div class="item" id="Nitro_1month">
+					<div class="img_wrapper" id="img_wrapper_Nitro_1month">
+						<img class="lazy img tf" id="img_Nitro_1month" src="images/Discord/placeholders/Nitro.webp" data-src="images/Discord/Nitro.webp" alt="Nitro" title="Nitro на 1 місяць">
+						<p class="name">1 місяць</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Nitro_1month')" id="btn_Nitro_1month-minus" class="btn-minus">-</button>
+						<button onclick="buy('Nitro_1month')" id="btn_Nitro_1month" class="btn"></button>
+						<button onclick="plus('Nitro_1month')" id="btn_Nitro_1month-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Nitro_1month"></p>
+				</div>
+				<div class="item" id="Nitro_year">
+					<div class="img_wrapper" id="img_wrapper_Nitro_year">
+						<img class="lazy img tf" id="img_Nitro_year" src="images/Discord/placeholders/Nitro.webp" data-src="images/Discord/Nitro.webp" alt="Nitro" title="Nitro на 1 рік">
+						<p class="name">1 рік</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Nitro_year')" id="btn_Nitro_year-minus" class="btn-minus">-</button>
+						<button onclick="buy('Nitro_year')" id="btn_Nitro_year" class="btn"></button>
+						<button onclick="plus('Nitro_year')" id="btn_Nitro_year-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Nitro_year"></p>
+				</div>
+				<div class="item" id="Nitro_Basic_1month">
+					<div class="img_wrapper" id="img_wrapper_Nitro_Basic_1month">
+						<img class="lazy img tf" id="img_Nitro_Basic_1month" src="images/Discord/placeholders/Nitro Basic.webp" data-src="images/Discord/Nitro Basic.webp" alt="Nitro Basic" title="Nitro Basic на 1 місяць">
+						<p class="name">1 місяць</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Nitro_Basic_1month')" id="btn_Nitro_Basic_1month-minus" class="btn-minus">-</button>
+						<button onclick="buy('Nitro_Basic_1month')" id="btn_Nitro_Basic_1month" class="btn"></button>
+						<button onclick="plus('Nitro_Basic_1month')" id="btn_Nitro_Basic_1month-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Nitro_Basic_1month"></p>
+				</div>
+				<div class="item" id="Nitro_Basic_year">
+					<div class="img_wrapper" id="img_wrapper_Nitro_Basic_year">
+						<img class="lazy img tf" id="img_Nitro_Basic_year" src="images/Discord/placeholders/Nitro Basic.webp" data-src="images/Discord/Nitro Basic.webp" alt="Nitro Basic" title="Nitro Basic на 1 рік">
+						<p class="name">1 рік</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Nitro_Basic_year')" id="btn_Nitro_Basic_year-minus" class="btn-minus">-</button>
+						<button onclick="buy('Nitro_Basic_year')" id="btn_Nitro_Basic_year" class="btn"></button>
+						<button onclick="plus('Nitro_Basic_year')" id="btn_Nitro_Basic_year-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Nitro_Basic_year"></p>
+				</div>
+			</div>
+			<p class="category">Telegram</p>
+			<div class="inner" id="inner_telegram">
+				<div class="item" id="Telegram_Premium_1month">
+					<div class="img_wrapper" id="img_wrapper_Telegram_Premium_1month">
+						<img class="lazy img sq" id="img_Telegram_Premium_1month" src="images/Telegram/placeholders/Premium.webp" data-src="images/Telegram/Premium.webp" alt="Telegram Premium" title="Telgram Premium на 1 місяць">
+						<p class="name">1 місяць</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Telegram_Premium_1month')" id="btn_Telegram_Premium_1month-minus" class="btn-minus">-</button>
+						<button onclick="buy('Telegram_Premium_1month')" id="btn_Telegram_Premium_1month" class="btn"></button>
+						<button onclick="plus('Telegram_Premium_1month')" id="btn_Telegram_Premium_1month-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Telegram_Premium_1month"></p>
+				</div>
+				<div class="item" id="Telegram_Premium_year">
+					<div class="img_wrapper" id="img_wrapper_Telegram_Premium_year">
+						<img class="lazy img sq" id="img_Telegram_Premium_year" src="images/Telegram/placeholders/Premium.webp" data-src="images/Telegram/Premium.webp" alt="Telegram Premium" title="Telegram Premium на 1 рік">
+						<p class="name">1 рік</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Telegram_Premium_year')" id="btn_Telegram_Premium_year-minus" class="btn-minus">-</button>
+						<button onclick="buy('Telegram_Premium_year')" id="btn_Telegram_Premium_year" class="btn"></button>
+						<button onclick="plus('Telegram_Premium_year')" id="btn_Telegram_Premium_year-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Telegram_Premium_year"></p>
+				</div>
+			</div>
+			<p class="category">Spotify</p>
+			<div class="inner" id="inner_spotify">
+				<div class="item" id="Spotify_Premium_1month">
+					<div class="img_wrapper" id="img_wrapper_Spotify_Premium_1month">
+						<img class="lazy img tf" id="img_Spotify_Premium_1month" src="images/Spotify/placeholders/Premium.webp" data-src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Spotify Premium на 1 місяць">
+						<p class="name">1 місяць</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Spotify_Premium_1month')" id="btn_Spotify_Premium_1month-minus" class="btn-minus">-</button>
+						<button onclick="buy('Spotify_Premium_1month')" id="btn_Spotify_Premium_1month" class="btn"></button>
+						<button onclick="plus('Spotify_Premium_1month')" id="btn_Spotify_Premium_1month-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Spotify_Premium_1month"></p>
+				</div>
+				<div class="item" id="Spotify_Premium_3month">
+					<div class="img_wrapper" id="img_wrapper_Spotify_Premium_3month">
+						<img class="lazy img tf" id="img_Spotify_Premium_3month" src="images/Spotify/placeholders/Premium.webp" data-src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Spotify Premium на 3 місяць">
+						<p class="name">3 місяця</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Spotify_Premium_3month')" id="btn_Spotify_Premium_3month-minus" class="btn-minus">-</button>
+						<button onclick="buy('Spotify_Premium_3month')" id="btn_Spotify_Premium_3month" class="btn"></button>
+						<button onclick="plus('Spotify_Premium_3month')" id="btn_Spotify_Premium_3month-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Spotify_Premium_3month"></p>
+				</div>
+				<div class="item" id="Spotify_Premium_6month">
+					<div class="img_wrapper" id="img_wrapper_Spotify_Premium_6month">
+						<img class="lazy img tf" id="img_Spotify_Premium_6month" src="images/Spotify/placeholders/Premium.webp" data-src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Spotify Premium на 6 місяць">
+						<p class="name">6 місяців</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Spotify_Premium_6month')" id="btn_Spotify_Premium_6month-minus" class="btn-minus">-</button>
+						<button onclick="buy('Spotify_Premium_6month')" id="btn_Spotify_Premium_6month" class="btn"></button>
+						<button onclick="plus('Spotify_Premium_6month')" id="btn_Spotify_Premium_6month-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Spotify_Premium_6month"></p>
+				</div>
+				<div class="item" id="Spotify_Premium_year">
+					<div class="img_wrapper" id="img_wrapper_Spotify_Premium_year">
+						<img class="lazy img tf" id="img_Spotify_Premium_year" src="images/Spotify/placeholders/Premium.webp" data-src="images/Spotify/Premium.webp" alt="Spotify Premium" title="Spotify Premium на 1 рік">
+						<p class="name">1 рік</p>
+					</div>
+					<div class="buttons">
+						<button onclick="minus('Spotify_Premium_year')" id="btn_Spotify_Premium_year-minus" class="btn-minus">-</button>
+						<button onclick="buy('Spotify_Premium_year')" id="btn_Spotify_Premium_year" class="btn"></button>
+						<button onclick="plus('Spotify_Premium_year')" id="btn_Spotify_Premium_year-plus" class="btn-plus">+</button>
+					</div>
+					<p class="price" id="price_Spotify_Premium_year"></p>
+				</div>
+			</div>
+			<p class="category">Fortnite</p>
+			<div class="item" id="Crew">
+				<div class="img_wrapper" id="img_wrapper_Crew">
+					<img class="lazy img fe" id="img_Crew" src="images/Fortnite/placeholders/Crew.webp" data-src="images/Fortnite/Crew.webp" alt="Crew" title="Отряд">
+					<p class="name">Отряд</p>
+				</div>
+				<div class="buttons_big">    
+					<button onclick="minus('Crew')" id="btn_Crew-minus" class="btn-minus">-</button>
+					<button onclick="buy('Crew')" id="btn_Crew" class="btn big"></button>
+					<button onclick="plus('Crew')" id="btn_Crew-plus" class="btn-plus">+</button>
+				</div>
+				<p class="price" id="price_Crew"></p>
+			</div>
+			<br>
+			<div class="item disabled" id="100VB">
+				<div class="img_wrapper" id="img_wrapper_100VB">
+					<img class="lazy img fe" id="img_100VB" src="images/Fortnite/placeholders/100VB.webp" data-src="images/Fortnite/100VB.webp" alt="100VB" title="Подарунок">
+					<p class="name">Подарунок</p>
+				</div>
+				<div class="buttons_big" style="width: 190px;">
+					<button onclick="minus('100VB')" id="btn_100VB-minus" class="btn-minus">-</button>
+					<button onclick="buy('100VB')" id="btn_100VB" class="btn big"></button>
+					<button onclick="plus('100VB')" id="btn_100VB-plus" class="btn-plus">+</button>
+					<button onclick="get_gift_info()" class="btn_info" id="btn_info_100VB">i</button>
+				</div>
+				<p class="price" id="price_100VB"></p>
+			</div>
+		</div>
+		<br>
+		<!-- <div class="inner" id="inner_fortnite">
+			<div class="item disabled" id="1000VB">
+			    <div class="img_wrapper" id="img_wrapper_1000VB">
+			        <img class="lazy img tf" id="img_1000VB" src="images/Fortnite/placeholders/1000VB.webp" data-src="images/Fortnite/1000VB.webp" alt="1000VB" title="1000VB">
+			        <p class="name">1000VB</p>
+			    </div>
+			
+			    <p class="price" id="price_1000VB"></p>
+			    
+			    <div class="buttons">
+			        <button onclick="minus('1000VB')" id="btn_1000VB-minus" class="btn-minus">-</button>
+			        <button onclick="buy('1000VB')" id="btn_1000VB" class="btn"></button>
+			        <button onclick="plus('1000VB')" id="btn_1000VB-plus" class="btn-plus">+</button>
+			    </div>
+			</div>
+			
+			<div class="item disabled" id="2800VB">
+			    <div class="img_wrapper" id="img_wrapper_2800VB">
+			        <img class="lazy img tf" id="img_2800VB" src="images/Fortnite/placeholders/2800VB.webp" data-src="images/Fortnite/2800VB.webp" alt="2800VB" title="2800VB">
+			        <p class="name">2800VB</p>
+			    </div>
+			
+			    <p class="price" id="price_2800VB"></p>
+			
+			    <div class="buttons">
+			        <button onclick="minus('2800VB')" id="btn_2800VB-minus" class="btn-minus">-</button>
+			        <button onclick="buy('2800VB')" id="btn_2800VB" class="btn"></button>
+			        <button onclick="plus('2800VB')" id="btn_2800VB-plus" class="btn-plus">+</button>
+			    </div>
+			</div>
+			
+			<div class="item disabled" id="5000VB">
+			    <div class="img_wrapper" id="img_wrapper_5000VB">
+			        <img class="lazy img tf" id="img_5000VB" src="images/Fortnite/placeholders/5000VB.webp" data-src="images/Fortnite/5000VB.webp" alt="5000VB" title="5000VB">
+			        <p class="name">5000VB</p>
+			    </div>
+			
+			    <p class="price" id="price_5000VB"></p>
+			
+			    <div class="buttons">
+			        <button onclick="minus('5000VB')" id="btn_5000VB-minus" class="btn-minus">-</button>
+			        <button onclick="buy('5000VB')" id="btn_5000VB" class="btn"></button>
+			        <button onclick="plus('5000VB')" id="btn_5000VB-plus" class="btn-plus">+</button>
+			    </div>
+			</div>
+			
+			<div class="item disabled" id="13500VB">
+			    <div class="img_wrapper" id="img_wrapper_13500VB">
+			        <img class="lazy img tf" id="img_13500VB" src="images/Fortnite/placeholders/13500VB.webp" data-src="images/Fortnite/13500VB.webp" alt="13500VB" title="13500VB">
+			        <p class="name">13500VB</p>
+			    </div>
+			
+			    <p class="price" id="price_13500VB"></p>
+			
+			    <div class="buttons">
+			        <button onclick="minus('13500VB')" id="btn_13500VB-minus" class="btn-minus"></button>
+			        <button onclick="buy('13500VB')" id="btn_13500VB" class="btn"></button>
+			        <button onclick="plus('13500VB')" id="btn_13500VB-plus" class="btn-plus"></button>
+			    </div>
+			</div>
+			
+			<div class="item disabled" id="PVE">
+			    <div class="img_wrapper" id="img_wrapper_PVE">
+			        <img class="lazy img tf" id="img_PVE" src="images/Fortnite/placeholders/PVE.webp" data-src="images/Fortnite/PVE.webp" alt="PVE" title="PVE">
+			        <p class="name">PVE</p>
+			    </div>
+			
+			    <p class="price" id="price_PVE"></p>
+			
+			    <div class="buttons">
+			        <button onclick="minus('PVE')" id="btn_PVE-minus" class="btn-minus">-</button>
+			        <button onclick="buy('PVE')" id="btn_PVE" class="btn"></button>
+			        <button onclick="plus('PVE')" id="btn_PVE-plus" class="btn-plus">+</button>
+			    </div>
+			</div>
+			
+			<div class="item disabled" id="Starter_Pack">
+			    <div class="img_wrapper" id="img_wrapper_Starter_Pack">
+			        <img class="lazy img tf" id="img_Starter_Pack" src="images/Fortnite/placeholders/Starter Pack.webp" data-src="images/Fortnite/Starter Pack.webp" alt="Starter Pack" title="Starter Pack">
+			        <p class="name">Starter Pack</p>
+			    </div>
+			    
+			    <p class="price" id="price_Starter_Pack"></p>
+			    
+			    <div class="buttons">
+			        <button onclick="minus('Starter_Pack')" id="btn_Starter_Pack-minus" class="btn-minus">-</button>
+			        <button onclick="buy('Starter_Pack')" id="btn_Starter_Pack" class="btn"></button>
+			        <button onclick="plus('Starter_Pack')" id="btn_Starter_Pack-plus" class="btn-plus">+</button>
+			    </div>
+			</div>
+			</div> -->
+		</div>
+		<div class="links">
+			<a href="https://discord.gg/aW4gJSFZZ3" target="_blank"><img class="lazy" src="images/additional/Discord.webp" data-src="images/additional/Discord.webp" alt="Discord" title="💬Чекаємо вас у нашему Discord сервері"></a>
+			<a href="https://www.tiktok.com/@mdshop_offical" target="_blank"><img class="lazy" src="images/additional/TikTok.webp" data-src="images/additional/TikTok.webp" alt="TikTok" title="🎶Не забувайте підписуватись на нас в TikTok"></a>
+			<a href="https://send.monobank.ua/jar/9GgRHHpeey" target="_blank"><img class="lazy" src="images/additional/money.webp" data-src="images/additional/money.webp" alt="coin" title="💰Підтримати магазин"></a>
+		</div>
+		<script src="js/localizator.js"></script>
+		<script src="js/onload.js"></script>
+		<script src="js/lazyload.js"></script>
+		<script src="https://telegram.org/js/telegram-web-app.js"></script>
+		<script src="js/buy.js"></script>
 
-                <div class="buttons">
-                    <button onclick="minus('Nitro month')" id="Nitro month-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Nitro month')" id="Nitro month" class="btn">Придбати</button>
-                    <button onclick="plus('Nitro month')" id="Nitro month-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper">
-                    <img class="img" width="150px" height="200px" src="images/Discord/Nitro.png" alt="Nitro">
-                    <p class="name">1 рік</p>
-                </div>
-
-                <p class="price">150UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('Nitro year')" id="Nitro year-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Nitro year')" id="Nitro year" class="btn">Придбати</button>
-                    <button onclick="plus('Nitro year')" id="Nitro year-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper">
-                    <img class="img" width="150px" height="200px" src="images/Discord/Nitro Basic.png" alt="Nitro Basic">
-                    <p class="name">1 місяць</p>
-                </div>
-
-                <p class="price">100UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('Nitro Basic month')" id="Nitro Basic month-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Nitro Basic month')" id="Nitro Basic month" class="btn">Придбати</button>
-                    <button onclick="plus('Nitro Basic month')" id="Nitro Basic month-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper">
-                    <img class="img" width="150px" height="200px" src="images/Discord/Nitro Basic.png" alt="Nitro Basic">
-                    <p class="name">1 рік</p>
-                </div>
-                
-                <p class="price">600UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('Nitro Basic year')" id="Nitro Basic year-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Nitro Basic year')" id="Nitro Basic year" class="btn">Придбати</button>
-                    <button onclick="plus('Nitro Basic year')" id="Nitro Basic year-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <h2 class="category">Telegram</h2>
-    <div class="container">
-        <div class="inner" id="inner_telegram">
-            <div class="item">
-                <div class="img_wrapper">
-                    <img style="border-radius: 25%;" class="img" width="150px" height="150px" src="images/Telegram/Premium.png" alt="Premium">
-                    <p class="name">1 місяць</p>
-                </div>
-
-                <p class="price">85UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('Premium month')" id="Premium month-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Premium month')" id="Premium month" class="btn">Придбати</button>
-                    <button onclick="plus('Premium month')" id="Premium month-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper">
-                    <img style="border-radius: 25%;" class="img" width="150px" height="150px" src="images/Telegram/Premium.png" alt="Premium">
-                    <p class="name">1 рік</p>
-                </div>
-
-                <p class="price">630UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('Premium year')" id="Premium year-minus" class="btn-minus">-</button>
-                    <button onclick="buy('Premium year')" id="Premium year" class="btn">Придбати</button>
-                    <button onclick="plus('Premium year')" id="Premium year-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <p class="category">Fortnite</p>
-    <div class="container">
-        <div class="inner" id="inner_fortnite">
-            <div class="item">
-                <div class="img_wrapper disabled">
-                    <img class="img" width="150px" height="200px" src="images/Fortnite/1000VB.png" alt="1000VB">
-                    <p class="name">1000VB</p>
-                </div>
-
-                <p class="price">90UAH</p>
-                
-                <div class="buttons">
-                    <button onclick="minus('1000VB')" id="1000VB-minus" class="btn-minus">-</button>
-                    <button onclick="buy('1000VB')" id="1000VB" class="btn disabled">Придбати</button>
-                    <button onclick="plus('1000VB')" id="1000VB-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper disabled">
-                    <img class="img" width="150px" height="200px" src="images/Fortnite/2800VB.png" alt="2800VB">
-                    <p class="name">2800VB</p>
-                </div>
-
-                <p class="price">200UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('2800VB')" id="2800VB-minus" class="btn-minus">-</button>
-                    <button onclick="buy('2800VB')" id="2800VB" class="btn disabled">Придбати</button>
-                    <button onclick="plus('2800VB')" id="2800VB-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper disabled">
-                    <img class="img" width="150px" height="200px" src="images/Fortnite/5000VB.png" alt="5000VB">
-                    <p class="name">5000VB</p>
-                </div>
-
-                <p class="price">300UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('5000VB')" id="5000VB-minus" class="btn-minus">-</button>
-                    <button onclick="buy('5000VB')" id="5000VB" class="btn disabled">Придбати</button>
-                    <button onclick="plus('5000VB')" id="5000VB-plus" class="btn-plus">+</button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="img_wrapper disabled">
-                    <img class="img" width="150px" height="200px" src="images/Fortnite/13500VB.png" alt="13500VB">
-                    <p class="name">13500VB</p>
-                </div>
-
-                <p class="price">550UAH</p>
-
-                <div class="buttons">
-                    <button onclick="minus('13500VB')" id="13500VB-minus" class="btn-minus"></button>
-                    <button onclick="buy('13500VB')" id="13500VB" class="btn disabled">Придбати</button>
-                    <button onclick="plus('13500VB')" id="13500VB-plus" class="btn-plus"></button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class='copyright'>
-        <a href="https://discord.com/invite/WfShADpfE6" target="_blank">Чекаємо на вас на нашему сервері Discord!<img width="25px" height="25px" src="images/MD Shop.png" alt="MD Shop"></a>
-    </div>
-</body>
+		<!-- SNOW -->
+		<!-- <canvas class="snow"></canvas>
+			<script type="text/javascript" src="js/snow.js"></script>
+			<link rel="stylesheet" href="css/snow_button.css"> -->
+	</body>
 </html>
